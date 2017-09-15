@@ -1,0 +1,2 @@
+CREATE SCHEMA `base_tcc` DEFAULT CHARACTER SET utf8 ;
+
