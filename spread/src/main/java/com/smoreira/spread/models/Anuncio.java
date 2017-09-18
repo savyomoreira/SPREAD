@@ -26,6 +26,15 @@ public class Anuncio
    @Column(name= "descricao")
    private String descricao;
 
+   public Anuncio(Integer id, Usuario usuario, String descricao) {
+      this.id = id;
+      this.usuario = usuario;
+      this.descricao = descricao;
+   }
+
+   public Anuncio() {
+   }
+
    public Integer getId()
    {
       return this.id;

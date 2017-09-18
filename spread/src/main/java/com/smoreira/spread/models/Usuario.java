@@ -13,21 +13,39 @@ import javax.persistence.Table;
 public class Usuario {
 
 	@Id
-	@SequenceGenerator(allocationSize=1, initialValue=1, sequenceName="sq_id_usuario", name="sq_id_usuario")
-	@GeneratedValue(generator="sq_id_usuario", strategy=GenerationType.SEQUENCE)
 	@Column(name = "id_usuario")
 	private Integer id;
 	
 	@Column(name = "nome")
 	private String name;
+
+	@Column(name = "email")
 	private String email;
+
+	@Column(name = "senha")
+	private String senha;
+
+	@Column(name = "telefone")
 	private String telefone;
+
+	@Column(name = "cep")
 	private String cep;
+
+	@Column(name = "bairro")
 	private String bairro;
-	private String rua;
+
+	@Column(name = "endereco")
+	private String endereco;
+
+	@Column(name = "cidade")
 	private String cidade;
+
+	@Column(name = "nome")
 	private String estado;
 	// private String foto;
+
+	@Column(name = "complemento")
+	private String complemento;
 	
 	public Usuario(String name, String email) {
 		super();
@@ -86,14 +104,6 @@ public class Usuario {
 		this.bairro = bairro;
 	}
 
-	public String getRua() {
-		return this.rua;
-	}
-
-	public void setRua(String rua) {
-		this.rua = rua;
-	}
-
 	public String getCidade() {
 		return this.cidade;
 	}
@@ -110,13 +120,27 @@ public class Usuario {
 		this.estado = estado;
 	}
 
-	// public String getFoto()
-	// {
-	// return this.foto;
-	// }
-	//
-	// public void setFoto(String foto)
-	// {
-	// this.foto = foto;
-	// }
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+
+	public String getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
+	}
+
+	public String getComplemento() {
+		return complemento;
+	}
+
+	public void setComplemento(String complemento) {
+		this.complemento = complemento;
+	}
 }
