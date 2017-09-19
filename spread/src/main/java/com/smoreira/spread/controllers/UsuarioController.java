@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RestController
 @RequestMapping("/usuario")
 public class UsuarioController {
-//
+
     @RequestMapping(method = RequestMethod.GET)
     public List<Usuario> getAll(){
         List<Usuario> usuarioList = new ArrayList<>();

@@ -32,6 +32,17 @@ public class Servico {
 	@JoinColumn(name = "id_anuncio", referencedColumnName = "id_anuncio")
 	private Anuncio anuncio;
 
+	public Servico(Integer id, Usuario usuario, Agendamento agendamento, Anuncio anuncio, Date data) {
+		this.id = id;
+		this.usuario = usuario;
+		this.agendamento = agendamento;
+		this.anuncio = anuncio;
+		this.data = data;
+	}
+
+	public Servico() {
+	}
+
 	private Date data;
 
 	public Integer getId() {

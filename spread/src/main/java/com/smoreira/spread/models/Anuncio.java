@@ -17,7 +17,7 @@ public class Anuncio
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
    @Column(name= "id_anuncio")
-   private Integer id;
+   private Long id;
    
    @ManyToOne
    @JoinColumn(name="id_usuario", referencedColumnName="id_usuario" )
@@ -26,7 +26,7 @@ public class Anuncio
    @Column(name= "descricao")
    private String descricao;
 
-   public Anuncio(Integer id, Usuario usuario, String descricao) {
+   public Anuncio(Long id, Usuario usuario, String descricao) {
       this.id = id;
       this.usuario = usuario;
       this.descricao = descricao;
@@ -35,12 +35,12 @@ public class Anuncio
    public Anuncio() {
    }
 
-   public Integer getId()
+   public Long getId()
    {
       return this.id;
    }
 
-   public void setId(Integer id)
+   public void setId(Long id)
    {
       this.id = id;
    }
