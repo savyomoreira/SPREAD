@@ -9,7 +9,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="usuario")
+@Table(name="USUARIO")
 public class Usuario {
 
 	@Id
@@ -40,7 +40,7 @@ public class Usuario {
 	@Column(name = "cidade")
 	private String cidade;
 
-	@Column(name = "nome")
+	@Column(name = "ESTADO")
 	private String estado;
 	// private String foto;
 
