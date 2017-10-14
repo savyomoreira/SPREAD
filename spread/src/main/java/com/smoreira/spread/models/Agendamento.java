@@ -1,5 +1,7 @@
 package com.smoreira.spread.models;
 
+import lombok.Data;
+
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -10,6 +12,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+@Data
 @Entity
 @Table(name="agendamento")
 public class Agendamento
@@ -21,53 +24,15 @@ public class Agendamento
    private Integer id;
    
    @ManyToOne()
-   @JoinColumn(name="id_usuario_solicitante", referencedColumnName="id_usuario" )
+   @JoinColumn(name="id_usuario_solicitante", referencedColumnName="id" )
    private Usuario usuarioSolicitante;
    
    @ManyToOne
-   @JoinColumn(name="id_anuncio", referencedColumnName="id_anuncio" )
+   @JoinColumn(name="id_anuncio", referencedColumnName="id" )
    private Anuncio anuncio;
    
    @Column(name= "data")
    private Date data;
 
-   public Integer getId()
-   {
-      return this.id;
-   }
 
-   public void setId(Integer id)
-   {
-      this.id = id;
-   }
-
-//   public Usuario getUsuarioSolicitante()
-//   {
-//      return this.usuarioSolicitante;
-//   }
-//
-//   public void setUsuarioSolicitante(Usuario usuarioSolicitante)
-//   {
-//      this.usuarioSolicitante = usuarioSolicitante;
-//   }
-
-   public Anuncio getAnuncio()
-   {
-      return this.anuncio;
-   }
-
-   public void setAnuncio(Anuncio anuncio)
-   {
-      this.anuncio = anuncio;
-   }
-
-   public Date getData()
-   {
-      return this.data;
-   }
-
-   public void setData(Date data)
-   {
-      this.data = data;
-   }
 }

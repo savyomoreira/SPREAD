@@ -1,15 +1,12 @@
 package com.smoreira.spread.models;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import lombok.Data;
+
+import javax.persistence.*;
 
 import java.util.Date;
 
+@Data
 @Entity
 @Table(name="qualificacao_servico")
 public class QualificacaoServico
@@ -25,58 +22,13 @@ public class QualificacaoServico
    
    @ManyToOne
    private Agendamento agendamento;
-   
+
+   @Column(name = "comentario")
    private String comentario;
-   
+
+   @Column(name = "data_Comentario")
+   @Temporal(TemporalType.DATE)
    private Date data;
 
-   public Integer getId()
-   {
-      return this.id;
-   }
 
-   public void setId(Integer id)
-   {
-      this.id = id;
-   }
-
-   public Servico getServico()
-   {
-      return this.servico;
-   }
-
-   public void setServico(Servico servico)
-   {
-      this.servico = servico;
-   }
-
-   public Agendamento getAgendamento()
-   {
-      return this.agendamento;
-   }
-
-   public void setAgendamento(Agendamento agendamento)
-   {
-      this.agendamento = agendamento;
-   }
-
-   public String getComentario()
-   {
-      return this.comentario;
-   }
-
-   public void setComentario(String comentario)
-   {
-      this.comentario = comentario;
-   }
-
-   public Date getData()
-   {
-      return this.data;
-   }
-
-   public void setData(Date data)
-   {
-      this.data = data;
-   }
 }

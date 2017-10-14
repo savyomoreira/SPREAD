@@ -21,7 +21,9 @@ drop table IF EXISTS ANUNCIO;
 create table ANUNCIO(
   id INT(6) primary key AUTO_INCREMENT,
   descicao varchar(100) not null,
-  id_usuario INT(6)
+  id_usuario INT(6),
+  deta_anuncio datetime
+  
 );
 
 create table AGENDAMENTO(
@@ -52,6 +54,17 @@ ADD FOREIGN KEY (ID_USUARIO_CONTRATANTE) REFERENCES USUARIO(id);
 
 ALTER TABLE AGENDAMENTO
 ADD FOREIGN KEY (ID_ANUNCIO) REFERENCES ANUNCIO(id); 
+
+
+ALTER TABLE `base_tcc`.`ANUNCIO` 
+ADD COLUMN `data_anuncio` DATE NULL AFTER `id_usuario`;
+
+DROP TABLE if exists  base_tcc.CATEGORIA_ANUNCIO;
+create table  base_tcc.CATEGORIA_ANUNCIO(
+	ID_CATEGORIA_ANUNCIO int(6) primary key auto_increment,
+	nome varchar(200) NOT NULL
+);
+
 
 
 

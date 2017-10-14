@@ -1,67 +1,40 @@
 package com.smoreira.spread.models;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import lombok.Data;
 
+import javax.persistence.*;
+import java.util.Date;
+import java.util.List;
+
+@Data
 @Entity
-@Table(name="anuncio")
-public class Anuncio
-{
+@Table(name="ANUNCIO")
+public class Anuncio{
 
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
-   @Column(name= "id_anuncio")
+   @Column(name= "id")
    private Long id;
    
    @ManyToOne
-   @JoinColumn(name="id_usuario", referencedColumnName="id_usuario" )
+   @JoinColumn(name="id_usuario", referencedColumnName="id" )
    private Usuario usuario;
    
    @Column(name= "descricao")
    private String descricao;
 
-   public Anuncio(Long id, Usuario usuario, String descricao) {
-      this.id = id;
-      this.usuario = usuario;
-      this.descricao = descricao;
-   }
+   @Column(name= "data_anuncio")
+   private Date dataAnuncio;
 
-   public Anuncio() {
-   }
+   @ManyToOne(fetch = FetchType.EAGER, targetEntity = CategoriaAnuncio.class,
+           cascade = CascadeType.ALL)
+   @JoinColumn(name = "ID_CATEGORIA_ANUNCIO")
+   private CategoriaAnuncio categoria;
 
-   public Long getId()
-   {
-      return this.id;
-   }
 
-   public void setId(Long id)
-   {
-      this.id = id;
-   }
+//   @OneToMany(fetch = FetchType.LAZY, targetEntity = FotosAnuncio.class,
+//           orphanRemoval = true, cascade = CascadeType.ALL)
+//   @JoinColumn(name = "id_anuncio")
+//   private List<FotosAnuncio> fotosAnuncioList;
 
-   public Usuario getUsuario()
-   {
-      return this.usuario;
-   }
-
-   public void setUsuario(Usuario usuario)
-   {
-      this.usuario = usuario;
-   }
-
-   public String getDescricao()
-   {
-      return this.descricao;
-   }
-
-   public void setDescricao(String descricao)
-   {
-      this.descricao = descricao;
-   }
 }

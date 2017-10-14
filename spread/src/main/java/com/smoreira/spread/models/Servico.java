@@ -21,7 +21,7 @@ public class Servico {
 	private Integer id;
 
 	@ManyToOne
-	@JoinColumn(name = "id_usuario", referencedColumnName = "id_usuario")
+	@JoinColumn(name = "id_usuario", referencedColumnName = "id")
 	private Usuario usuario;
 
 	@ManyToOne
@@ -29,7 +29,7 @@ public class Servico {
 	private Agendamento agendamento;
 
 	@ManyToOne
-	@JoinColumn(name = "id_anuncio", referencedColumnName = "id_anuncio")
+	@JoinColumn(name = "id_anuncio", referencedColumnName = "id")
 	private Anuncio anuncio;
 
 	public Servico(Integer id, Usuario usuario, Agendamento agendamento, Anuncio anuncio, Date data) {

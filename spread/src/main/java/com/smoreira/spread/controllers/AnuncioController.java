@@ -1,6 +1,7 @@
 package com.smoreira.spread.controllers;
 
 import com.smoreira.spread.models.Anuncio;
+import com.smoreira.spread.models.FotosAnuncio;
 import com.smoreira.spread.models.Usuario;
 import com.smoreira.spread.service.AnuncioService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,8 @@ public class AnuncioController{
 
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<?> getAll(){
+        FotosAnuncio anuncio = new FotosAnuncio();
+        anuncio.getAnuncio();
         return new ResponseEntity(anuncioService.getAll(), HttpStatus.OK);
     }
 }
