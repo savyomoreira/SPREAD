@@ -31,10 +31,7 @@ public class Anuncio{
    @JoinColumn(name = "ID_CATEGORIA_ANUNCIO")
    private CategoriaAnuncio categoria;
 
-
-//   @OneToMany(fetch = FetchType.LAZY, targetEntity = FotosAnuncio.class,
-//           orphanRemoval = true, cascade = CascadeType.ALL)
-//   @JoinColumn(name = "id_anuncio")
-//   private List<FotosAnuncio> fotosAnuncioList;
+   @Column(name = "foto", length = 65535)
+   private String foto;
 
 }

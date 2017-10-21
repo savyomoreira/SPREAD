@@ -67,4 +67,6 @@ create table  base_tcc.CATEGORIA_ANUNCIO(
 
 
 
+alter table base_tcc.ANUNCIO add column foto MEDIUMTEXT;
+
 
