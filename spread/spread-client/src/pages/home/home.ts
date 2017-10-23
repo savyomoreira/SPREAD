@@ -9,6 +9,7 @@ import {SearchPage} from "../search/search";
 import {CartPage} from "../cart/cart";
 
 
+import {ListAnuncioPage} from "../lista-anuncio/lista-anuncio";
 /*
  Generated class for the LoginPage page.
 
@@ -40,19 +41,21 @@ export class HomePage {
   public items: any;
 
   constructor(public nav: NavController, public categoryService: CategoryService, public itemService: ItemService) {
-    this.categories = categoryService.getAll();
+    categoryService.findAll().subscribe(data =>{
+      this.categories = data;
+    });
 
     this.items = itemService.getAll();
   }
 
   // view categories
   viewCategories() {
-    this.nav.push(CategoriesPage);
+    this.nav.push(ListAnuncioPage);
   }
 
   // view a category
   viewCategory(catId) {
-    this.nav.push(CategoryPage, {id: catId});
+    this.nav.push(ListAnuncioPage, {id: catId});
   }
 
   // view a item

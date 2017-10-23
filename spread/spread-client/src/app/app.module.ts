@@ -5,7 +5,12 @@ import {BrowserModule} from '@angular/platform-browser';
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 
+import { HttpModule } from '@angular/http';
+
 // import services
+
+import {GenericService} from '../services/generic.service';
+import {AbstractHttpService} from '../services/abstract-http.service';
 import {CategoryService} from '../services/category-service';
 import {ItemService} from '../services/item-service';
 import {UserService} from '../services/user-service';
@@ -13,10 +18,14 @@ import {StoreService} from '../services/store-service';
 import {CartService} from '../services/cart-service';
 import {OrderService} from '../services/order-service';
 import {NewsService} from '../services/news-service';
+import {AnuncioService} from '../services/anuncio-service';
+
 // end import services
 // end import services
 
 // import pages
+
+import {CadastroAnuncioPage} from '../pages/cadastro-anuncio/cadastro-anuncio';
 import {CartPage} from '../pages/cart/cart';
 import {CategoriesPage} from '../pages/categories/categories';
 import {CategoryPage} from '../pages/category/category';
@@ -39,6 +48,9 @@ import {TabAttributePage} from '../pages/tab-attribute/tab-attribute';
 import {TabFilterPage} from '../pages/tab-filter/tab-filter';
 import {WelcomePage} from '../pages/welcome/welcome';
 import {WishListPage} from '../pages/wish-list/wish-list';
+
+import {ListAnuncioPage} from '../pages/lista-anuncio/lista-anuncio';
+
 // end import pages
 
 @NgModule({
@@ -50,6 +62,8 @@ import {WishListPage} from '../pages/wish-list/wish-list';
     ChangePasswordPage,
     CurrencyConverterPage,
     ForgotPasswordPage,
+    ListAnuncioPage,
+    CadastroAnuncioPage,
     HomePage,
     ItemPage,
     LoginPage,
@@ -69,6 +83,7 @@ import {WishListPage} from '../pages/wish-list/wish-list';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -77,11 +92,13 @@ import {WishListPage} from '../pages/wish-list/wish-list';
     CartPage,
     CategoriesPage,
     CategoryPage,
+    CadastroAnuncioPage,
     ChangePasswordPage,
     CurrencyConverterPage,
     ForgotPasswordPage,
     HomePage,
     ItemPage,
+    ListAnuncioPage,
     LoginPage,
     ModalFilterPage,
     ModalItemOptionPage,
@@ -101,12 +118,15 @@ import {WishListPage} from '../pages/wish-list/wish-list';
     StatusBar,
     SplashScreen,
     CategoryService,
+    AbstractHttpService,
+    GenericService,
     ItemService,
     UserService,
     StoreService,
     CartService,
     OrderService,
-    NewsService
+    NewsService,
+    AnuncioService
     /* import services */
   ]
 })

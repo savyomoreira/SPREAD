@@ -1,6 +1,8 @@
 import {Injectable} from "@angular/core";
 import {ITEMS} from "./mock-items";
 
+import {GenericService} from '../services/generic.service';
+
 @Injectable()
 export class ItemService {
   private items: any;

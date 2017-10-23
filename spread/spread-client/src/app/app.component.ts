@@ -14,6 +14,7 @@ import {SettingsPage} from '../pages/settings/settings';
 import {CategoriesPage} from '../pages/categories/categories';
 import {WishListPage} from '../pages/wish-list/wish-list';
 import {MyOrderPage} from '../pages/my-order/my-order';
+import {CadastroAnuncioPage} from '../pages/cadastro-anuncio/cadastro-anuncio';
 // end import pages
 
 @Component({
@@ -34,6 +35,13 @@ export class MyApp {
       icon: 'ios-home-outline',
       count: 0,
       component: HomePage
+    },
+
+    {
+      title: 'Cadastro Anuncio',
+      icon: 'ios-list-box-outline',
+      count: 0,
+      component: CadastroAnuncioPage
     },
 
     {

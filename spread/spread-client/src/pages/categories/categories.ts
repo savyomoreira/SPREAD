@@ -3,6 +3,7 @@ import {NavController} from 'ionic-angular';
 import {CategoryService} from '../../services/category-service';
 import {CategoryPage} from '../category/category';
 import {CartPage} from "../cart/cart";
+import {ListAnuncioPage} from "../lista-anuncio/lista-anuncio";
 
 /*
  Generated class for the LoginPage page.
@@ -19,12 +20,18 @@ export class CategoriesPage {
   public categories: any;
 
   constructor(public nav: NavController, public categoryService: CategoryService) {
-    this.categories = categoryService.getAll();
+    categoryService.findAll().subscribe(data =>{
+      console.log(data);
+      this.categories = data;
+   });
   }
 
   // view category
   viewCategory(categoryId) {
-    this.nav.push(CategoryPage, {id: categoryId});
+    console.log(categoryId)
+    //this.nav.push(CategoryPage, {id: categoryId});
+
+    this.nav.push(ListAnuncioPage, {id: categoryId});
   }
 
   // view cart

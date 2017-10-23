@@ -33,8 +33,9 @@ export class CategoryPage {
   constructor(public nav: NavController, public itemService: ItemService, public categoryService: CategoryService,
               public modalCtrl: ModalController, public actionSheetCtrl: ActionSheetController) {
     // get list items of a category as sample
-    this.items = itemService.getByCategory(1);
+    this.items = itemService.getAll();
 
+    console.log('test')
     // set category info
     this.category = categoryService.getItem(1);
   }
