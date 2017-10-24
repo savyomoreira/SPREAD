@@ -19,7 +19,7 @@
   <ion-list class="list-form">
 
     <ion-item>
-      <ion-input type="text" placeholder="Descrição da habilidade"></ion-input>
+      <ion-input [(ngModel)]="anuncio.nome" type="text" placeholder="Descrição da habilidade"></ion-input>
     </ion-item>
 
     <!-- <ion-item>
@@ -28,17 +28,18 @@
 
     <ion-item>
       <ion-label>Categoria da habilidade</ion-label>
-      <ion-select [(ngModel)]="anuncio.categotia">
-        <ion-option value="f">Female</ion-option>
-        <ion-option value="m">Male</ion-option>
+      <ion-select [(ngModel)]="categoriaSelecionada">
+        
+          <ion-option *ngFor="let categoria of categoriaList" 
+          [value]="categoria">{{categoria.nome}}</ion-option>
+        
+
       </ion-select>
     </ion-item>
 
   </ion-list>
 
-  <button ion-button color="primary" block (click)="register()">Create Account</button>
+  <button ion-button color="primary" block (click)="register()">Criar Anuncio</button>
 
-  <div class="align-bottom" padding text-center>
-    Have an account? <span class="bold" (click)="login()">Sign in</span>
-  </div>
+
 </ion-content>

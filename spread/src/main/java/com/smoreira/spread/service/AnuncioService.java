@@ -18,4 +18,8 @@ public class AnuncioService {
     public List<Anuncio> getAll(){
         return anuncioRepository.findAll();
     }
+
+    public void save(Anuncio anuncio){
+        anuncioRepository.save(anuncio);
+    }
 }

@@ -2,6 +2,9 @@ import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
 import {LoginPage} from '../login/login';
 import {HomePage} from '../home/home';
+import {AnuncioService} from '../../services/anuncio-service';
+
+import {CategoryService} from '../../services/category-service';
 
 
 /*
@@ -17,8 +20,19 @@ import {HomePage} from '../home/home';
 export class CadastroAnuncioPage {
 
   anuncio: any;
+  categoriaList: Array<any>;
+  categoriaSelecionada: any; 
 
-  constructor(public nav: NavController) {
+  constructor(public nav: NavController,
+    private anuncioService: AnuncioService,
+     public categoryService: CategoryService) {
+
+    this.anuncio = {}
+    this.categoriaList = Array<any>();
+    categoryService.findAll().subscribe(data =>{
+      console.log(data);
+      this.categoriaList = data;
+   });
   }
 
   // go to login page
@@ -28,6 +42,9 @@ export class CadastroAnuncioPage {
 
   // go to home page
   register() {
-    this.nav.setRoot(HomePage);
+    this.anuncio.categoria = this.categoriaSelecionada;
+    console.log(this.anuncio);
+    this.anuncioService.save(this.anuncio)
+   this.nav.setRoot(HomePage);
   }
 }
