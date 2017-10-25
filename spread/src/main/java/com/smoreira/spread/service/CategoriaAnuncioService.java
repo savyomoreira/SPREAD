@@ -16,4 +16,8 @@ public class CategoriaAnuncioService {
     public List<CategoriaAnuncio> getAll(){
         return categoriaAnuncioepository.findAll();
     }
+
+    public CategoriaAnuncio getOne(Long id){
+        return categoriaAnuncioepository.findOne(id);
+    }
 }
