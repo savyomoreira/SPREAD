@@ -8,10 +8,10 @@ import {GenericService} from '../services/generic.service';
 @Injectable()
 export class AnuncioService extends GenericService {
 
-  private categories: any;
+  //private categories: any;
 
   constructor(public http: Http) {
-    super('anuncio', http);
+    super('anuncio/', http);
   }
  
 }

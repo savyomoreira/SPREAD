@@ -132,6 +132,7 @@ export class ListAnuncioPage {
 
   // view a item
   viewItem(itemId) {
+    console.log(itemId)
     this.nav.push(ItemPage, {id: itemId})
   }
 

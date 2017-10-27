@@ -2,6 +2,10 @@ import {Component} from '@angular/core';
 import {NavController, ModalController} from 'ionic-angular';
 import {ItemService} from '../../services/item-service';
 import {ModalItemOptionPage} from "../modal-item-option/modal-item-option";
+import { NavParams } from 'ionic-angular';
+
+import {AnuncioService} from '../../services/anuncio-service';
+
 
 /*
  Generated class for the LoginPage page.
@@ -17,9 +21,20 @@ export class ItemPage {
   // item info
   public item: any;
 
-  constructor(public nav: NavController, public itemService: ItemService, public modalCtrl: ModalController) {
+  constructor(public nav: NavController, public navParams: NavParams, 
+    private anuncioService: AnuncioService,
+    public itemService: ItemService,
+    public modalCtrl: ModalController) {
     // get the first item as sample data
+
     this.item = itemService.getItem(1);
+    this.anuncioService.findOne(navParams.get('id')).subscribe(data => {
+     // this.item = data;
+     this.item.descricao = data.descricao;
+     //this.item.f = data.descricao;
+      console.log(data);
+    })
+
   }
 
   // add or remove item on wish list

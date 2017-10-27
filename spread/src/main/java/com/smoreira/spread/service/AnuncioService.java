@@ -26,6 +26,10 @@ public class AnuncioService {
         return anuncioRepository.findAll();
     }
 
+    public Anuncio getOne(Long id){
+        return anuncioRepository.getOne(id);
+    }
+
     public void save(Anuncio anuncio){
         anuncio.setCategoria(categoriaAnuncioService.getOne(anuncio.getCategoria().getId()));
         anuncio.setUsuario(usuarioService.getOne(1));

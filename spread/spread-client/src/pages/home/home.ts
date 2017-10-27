@@ -2,9 +2,9 @@ import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
 import {CategoryService} from '../../services/category-service';
 import {ItemService} from '../../services/item-service';
-import {CategoriesPage} from "../categories/categories";
-import {CategoryPage} from "../category/category";
-import {ItemPage} from "../item/item";
+//mport {CategoriesPage} from "../categories/categories";
+//import {CategoryPage} from "../category/category";
+//import {ItemPage} from "../item/item";
 import {SearchPage} from "../search/search";
 import {CartPage} from "../cart/cart";
 
@@ -60,7 +60,7 @@ export class HomePage {
 
   // view a item
   viewItem(itemId) {
-    this.nav.push(ItemPage, {id: itemId})
+   // this.nav.push(ItemPage, {id: itemId})
   }
 
   // go to search page

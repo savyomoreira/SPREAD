@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
-@Data
+//@Data
 @Entity
 @Table(name="ANUNCIO")
 public class Anuncio{
@@ -34,4 +34,51 @@ public class Anuncio{
    @Column(name = "foto", length = 65535)
    private String foto;
 
+   public Long getId() {
+      return this.id;
+   }
+
+   public void setId(Long id) {
+      this.id = id;
+   }
+
+   public Usuario getUsuario() {
+      return this.usuario;
+   }
+
+   public void setUsuario(Usuario usuario) {
+      this.usuario = usuario;
+   }
+
+   public String getDescricao() {
+      return this.descricao;
+   }
+
+   public void setDescricao(String descricao) {
+      this.descricao = descricao;
+   }
+
+   public Date getDataAnuncio() {
+      return this.dataAnuncio;
+   }
+
+   public void setDataAnuncio(Date dataAnuncio) {
+      this.dataAnuncio = dataAnuncio;
+   }
+
+   public CategoriaAnuncio getCategoria() {
+      return this.categoria;
+   }
+
+   public void setCategoria(CategoriaAnuncio categoria) {
+      this.categoria = categoria;
+   }
+
+   public String getFoto() {
+      return this.foto;
+   }
+
+   public void setFoto(String foto) {
+      this.foto = foto;
+   }
 }
