@@ -1,7 +1,5 @@
 package com.smoreira.spread.controllers;
 
-import com.smoreira.spread.models.FotosAnuncio;
-import com.smoreira.spread.service.AnuncioService;
 import com.smoreira.spread.service.CategoriaAnuncioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

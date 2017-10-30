@@ -1,6 +1,6 @@
 package com.smoreira.spread.service;
 
-import com.smoreira.spread.models.CategoriaAnuncio;
+import com.smoreira.spread.models.entity.CategoriaAnuncio;
 import com.smoreira.spread.repository.CategoriaAnuncioepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

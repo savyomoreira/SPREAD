@@ -65,8 +65,37 @@ create table  base_tcc.CATEGORIA_ANUNCIO(
 	nome varchar(200) NOT NULL
 );
 
+ALTER TABLE `base_tcc`.`ANUNCIO` 
+ADD COLUMN `ID_CATEGORIA_ANUNCIO` int;
+
+
+ALTER TABLE base_tcc.ANUNCIO
+ADD FOREIGN KEY (ID_CATEGORIA_ANUNCIO) 
+REFERENCES base_tcc.CATEGORIA_ANUNCIO(ID_CATEGORIA_ANUNCIO); 
 
 
 alter table base_tcc.ANUNCIO add column foto MEDIUMTEXT;
+
+ALTER TABLE `base_tcc`.`ANUNCIO` 
+ADD COLUMN `titulo_anuncio` varchar(255);
+
+create table  base_tcc.SOLICITACAO_SERVICO(
+	id_solicitacao_servico int(6) primary key auto_increment,
+	id_anuncio int(6) NOT NULL,
+    id_cliente int(6) NOT NULL,
+    DATA_AGENDAMENTO datetime
+);
+
+ALTER TABLE base_tcc.SOLICITACAO_SERVICO
+ADD FOREIGN KEY (id_anuncio) 
+REFERENCES base_tcc.ANUNCIO(id); 
+
+ALTER TABLE base_tcc.SOLICITACAO_SERVICO
+ADD FOREIGN KEY (id_cliente) 
+REFERENCES base_tcc.USUARIO(id); 
+
+ALTER TABLE `base_tcc`.`SOLICITACAO_SERVICO` 
+ADD COLUMN `status_solicitacao` varchar(20);
+
 
 

@@ -1,7 +1,6 @@
 package com.smoreira.spread.controllers;
 
-import com.smoreira.spread.models.Servico;
-import com.smoreira.spread.models.Usuario;
+import com.smoreira.spread.models.entity.Servico;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 

@@ -1,12 +1,10 @@
 package com.smoreira.spread.service;
 
-import com.smoreira.spread.models.Anuncio;
-import com.smoreira.spread.models.Usuario;
+import com.smoreira.spread.models.entity.Anuncio;
 import com.smoreira.spread.repository.AnuncioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 

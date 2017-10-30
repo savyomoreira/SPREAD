@@ -1,7 +1,5 @@
-package com.smoreira.spread.models;
+package com.smoreira.spread.models.entity;
 
-import org.hibernate.annotations.ManyToAny;
-import lombok.Data;
 import javax.persistence.*;
 import java.sql.Blob;
 

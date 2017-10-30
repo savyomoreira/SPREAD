@@ -29,13 +29,13 @@
 
 <ion-content class=" common-bg">
   <!-- slider on top-->
-  <ion-slides pager autoplay="2000">
+  <!-- <ion-slides pager autoplay="2000">
 
     <ion-slide *ngFor="let slide of slides">
       <img src="{{ slide.src }}" alt="">
     </ion-slide>
 
-  </ion-slides>
+  </ion-slides> -->
 
   <!--list categories-->
   <ion-card>
@@ -45,7 +45,7 @@
           <img src="assets/img/categories/accessories.png" alt="">
           <div text-center>{{ cat.nome }}</div>
         </ion-col>
-        <ion-col text-center (click)="viewCategories()">
+        <ion-col text-center (click)="viewCategorias()">
           <img src="assets/img/categories/all.png" alt="">
           <div text-center>All categories</div>
         </ion-col>
@@ -54,7 +54,7 @@
   </ion-card>
 
   <!--Deals-->
-  <ion-grid class="grid-no-padding deals">
+  <!-- <ion-grid class="grid-no-padding deals">
     <ion-row>
       <ion-col text-center>
         <ion-card>
@@ -71,9 +71,9 @@
         </ion-card>
       </ion-col>
     </ion-row>
-  </ion-grid>
+  </ion-grid> -->
 
-  <h4 text-center>JUST FOR YOU</h4>
+  <h4 text-center>Recentes</h4>
 
   <!--List of items-->
   <ion-grid class="list-cards">

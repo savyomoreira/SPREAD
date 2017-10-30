@@ -1,13 +1,12 @@
 package com.smoreira.spread.controllers;
 
-import com.smoreira.spread.models.Usuario;
+import com.smoreira.spread.models.entity.Usuario;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-//import com.smoreira.spread.models.Usuario;
+//import com.smoreira.spread.models.entity.Usuario;
 import java.util.List;
 import java.util.*;
-import org.springframework.http.*;
-import org.springframework.web.bind.annotation.RequestMapping;
+
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @RestController

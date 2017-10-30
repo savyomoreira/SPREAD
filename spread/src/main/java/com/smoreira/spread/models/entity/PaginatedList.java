@@ -1,4 +1,4 @@
-package com.smoreira.spread.models;
+package com.smoreira.spread.models.entity;
 
 import java.util.List;
 

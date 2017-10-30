@@ -4,6 +4,7 @@ import {RegisterPage} from "../register/register";
 import {HomePage} from '../home/home';
 import {ForgotPasswordPage} from "../forgot-password/forgot-password";
 
+import {LoginService} from '../../services/login-service';
 /*
  Generated class for the LoginPage page.
 
@@ -16,7 +17,12 @@ import {ForgotPasswordPage} from "../forgot-password/forgot-password";
 })
 export class LoginPage {
 
-  constructor(public nav: NavController) {
+  credentials = {
+    login: '',
+    senha: ''
+  }
+
+  constructor(public nav: NavController, public loginService: LoginService) {
   }
 
   // go to register page
@@ -26,7 +32,13 @@ export class LoginPage {
 
   // go to home page
   login() {
-    this.nav.setRoot(HomePage);
+    this.loginService.login(this.credentials).then(data => {
+      sessionStorage.setItem('user', JSON.stringify(data.json()));
+      this.nav.setRoot(HomePage);
+    }).catch(data => {
+      console.log('erro no login')
+    });
+    
   }
 
   // go to forgot password page

@@ -1,10 +1,7 @@
-package com.smoreira.spread.models;
-
-import lombok.Data;
+package com.smoreira.spread.models.entity;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.util.List;
 
 //@Data
 @Entity
@@ -33,6 +30,9 @@ public class Anuncio{
 
    @Column(name = "foto", length = 65535)
    private String foto;
+
+   @Column(name = "titulo_anuncio")
+   private String tituloAnuncio;
 
    public Long getId() {
       return this.id;
@@ -80,5 +80,13 @@ public class Anuncio{
 
    public void setFoto(String foto) {
       this.foto = foto;
+   }
+
+   public String getTituloAnuncio() {
+      return this.tituloAnuncio;
+   }
+
+   public void setTituloAnuncio(String tituloAnuncio) {
+      this.tituloAnuncio = tituloAnuncio;
    }
 }

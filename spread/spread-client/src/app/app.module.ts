@@ -19,6 +19,9 @@ import {CartService} from '../services/cart-service';
 import {OrderService} from '../services/order-service';
 import {NewsService} from '../services/news-service';
 import {AnuncioService} from '../services/anuncio-service';
+import {SolicitacaoService} from '../services/solicitacao-service';
+import {LoginService} from '../services/login-service';
+
 
 // end import services
 // end import services
@@ -26,6 +29,8 @@ import {AnuncioService} from '../services/anuncio-service';
 // import pages
 
 import {CadastroAnuncioPage} from '../pages/cadastro-anuncio/cadastro-anuncio';
+import {ListaCategotiaPage} from '../pages/lista-categotia/lista-categotia';
+import {ListSolicitacoesServicoPage} from '../pages/lista-solicitacoes-servico/lista-solicitacoes-servico';
 import {CartPage} from '../pages/cart/cart';
 import {CategoriesPage} from '../pages/categories/categories';
 import {CategoryPage} from '../pages/category/category';
@@ -63,7 +68,9 @@ import {ListAnuncioPage} from '../pages/lista-anuncio/lista-anuncio';
     CurrencyConverterPage,
     ForgotPasswordPage,
     ListAnuncioPage,
+    ListaCategotiaPage,
     CadastroAnuncioPage,
+    ListSolicitacoesServicoPage,
     HomePage,
     ItemPage,
     LoginPage,
@@ -91,6 +98,7 @@ import {ListAnuncioPage} from '../pages/lista-anuncio/lista-anuncio';
     MyApp,
     CartPage,
     CategoriesPage,
+    ListSolicitacoesServicoPage,
     CategoryPage,
     CadastroAnuncioPage,
     ChangePasswordPage,
@@ -99,6 +107,7 @@ import {ListAnuncioPage} from '../pages/lista-anuncio/lista-anuncio';
     HomePage,
     ItemPage,
     ListAnuncioPage,
+    ListaCategotiaPage,
     LoginPage,
     ModalFilterPage,
     ModalItemOptionPage,
@@ -122,6 +131,8 @@ import {ListAnuncioPage} from '../pages/lista-anuncio/lista-anuncio';
     GenericService,
     ItemService,
     UserService,
+    LoginService,
+    SolicitacaoService,
     StoreService,
     CartService,
     OrderService,

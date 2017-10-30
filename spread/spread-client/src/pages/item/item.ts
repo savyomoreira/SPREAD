@@ -25,14 +25,9 @@ export class ItemPage {
     private anuncioService: AnuncioService,
     public itemService: ItemService,
     public modalCtrl: ModalController) {
-    // get the first item as sample data
 
-    this.item = itemService.getItem(1);
     this.anuncioService.findOne(navParams.get('id')).subscribe(data => {
-     // this.item = data;
-     this.item.descricao = data.descricao;
-     //this.item.f = data.descricao;
-      console.log(data);
+      this.item = data;
     })
 
   }
@@ -40,16 +35,6 @@ export class ItemPage {
   // add or remove item on wish list
   toggleWishList(item) {
     item.on_wish_list = !item.on_wish_list;
-  }
-
-  // get item options group name
-  getOptionGroupsName(item) {
-    let optionGroups = [];
-    for (let i = 0; i < item.option_groups.length; i++) {
-      optionGroups.push(item.option_groups[i].name);
-    }
-
-    return optionGroups.join(',');
   }
 
   // make array with range is n

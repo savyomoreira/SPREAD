@@ -1,4 +1,6 @@
-package com.smoreira.spread.models;
+package com.smoreira.spread.models.dto;
+
+import com.smoreira.spread.models.entity.Anuncio;
 
 import java.util.HashMap;
 
@@ -9,5 +11,6 @@ public class AnuncioDTO extends HashMap<String, Object> {
         this.put("foto", anuncio.getFoto());
         this.put("categoria", anuncio.getCategoria());
         this.put("usuario", anuncio.getUsuario());
+        this.put("tituloAnuncio", anuncio.getTituloAnuncio());
     }
 }

@@ -8,6 +8,8 @@ import {ItemService} from '../../services/item-service';
 import {SearchPage} from "../search/search";
 import {CartPage} from "../cart/cart";
 
+import {ListaCategotiaPage} from '../lista-categotia/lista-categotia';
+
 
 import {ListAnuncioPage} from "../lista-anuncio/lista-anuncio";
 /*
@@ -61,6 +63,10 @@ export class HomePage {
   // view a item
   viewItem(itemId) {
    // this.nav.push(ItemPage, {id: itemId})
+  }
+
+  viewCategorias(){
+    this.nav.push(ListaCategotiaPage);  
   }
 
   // go to search page

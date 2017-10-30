@@ -7,6 +7,7 @@ import {SplashScreen} from '@ionic-native/splash-screen';
 // import pages
 import {HomePage} from '../pages/home/home';
 import {LoginPage} from '../pages/login/login';
+import {ListaCategotiaPage} from '../pages/lista-categotia/lista-categotia';
 import {WelcomePage} from '../pages/welcome/welcome';
 import {MyAccountPage} from '../pages/my-account/my-account';
 import {CartPage} from '../pages/cart/cart';
@@ -15,6 +16,8 @@ import {CategoriesPage} from '../pages/categories/categories';
 import {WishListPage} from '../pages/wish-list/wish-list';
 import {MyOrderPage} from '../pages/my-order/my-order';
 import {CadastroAnuncioPage} from '../pages/cadastro-anuncio/cadastro-anuncio';
+import {ListSolicitacoesServicoPage} from '../pages/lista-solicitacoes-servico/lista-solicitacoes-servico';
+
 // end import pages
 
 @Component({
@@ -26,6 +29,8 @@ import {CadastroAnuncioPage} from '../pages/cadastro-anuncio/cadastro-anuncio';
 export class MyApp {
 
   public rootPage: any;
+
+  currentUser: any;
 
   public nav: any;
 
@@ -42,6 +47,18 @@ export class MyApp {
       icon: 'ios-list-box-outline',
       count: 0,
       component: CadastroAnuncioPage
+    },
+    {
+      title: 'solicitacỗes de servico',
+      icon: 'ios-list-box-outline',
+      count: 0,
+      component: ListSolicitacoesServicoPage
+    },
+    {
+      title: 'Lista_categoria',
+      icon: 'ios-list-box-outline',
+      count: 0,    
+      component: ListaCategotiaPage
     },
 
     {
@@ -96,7 +113,9 @@ export class MyApp {
   ];
 
   constructor(public platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
-    this.rootPage = WelcomePage;
+    this.rootPage = LoginPage;
+
+    this.currentUser = JSON.parse(sessionStorage.getItem('user'));
 
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
