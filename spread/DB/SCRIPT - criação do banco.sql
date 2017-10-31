@@ -99,3 +99,20 @@ ADD COLUMN `status_solicitacao` varchar(20);
 
 
 
+create table  base_tcc.ESTADO(
+	id_estado int(6) primary key auto_increment,
+	nome varchar(100) NOT NULL
+);
+
+create table  base_tcc.CIDADE(
+	id_cidade int(6) primary key auto_increment,
+	id_estado int(6),
+	nome varchar(100) NOT NULL
+);
+
+ALTER TABLE base_tcc.CIDADE
+ADD FOREIGN KEY (id_estado) 
+REFERENCES base_tcc.ESTADO(id_estado); 
+
+
+

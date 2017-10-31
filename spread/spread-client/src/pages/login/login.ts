@@ -22,7 +22,14 @@ export class LoginPage {
     senha: ''
   }
 
+  currentUser: any;
+
   constructor(public nav: NavController, public loginService: LoginService) {
+
+    this.currentUser = JSON.parse(sessionStorage.getItem('user'));
+    if(this.currentUser != null){
+      this.nav.setRoot(HomePage);
+    }
   }
 
   // go to register page

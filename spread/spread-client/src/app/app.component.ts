@@ -30,7 +30,7 @@ export class MyApp {
 
   public rootPage: any;
 
-  currentUser: any;
+  currentUser = {name: ''};
 
   public nav: any;
 
@@ -116,6 +116,9 @@ export class MyApp {
     this.rootPage = LoginPage;
 
     this.currentUser = JSON.parse(sessionStorage.getItem('user'));
+    if(this.currentUser == null){
+      this.currentUser = {name: ''};
+    }
 
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.

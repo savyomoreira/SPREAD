@@ -76,15 +76,63 @@
   <h4 text-center>Recentes</h4>
 
   <!--List of items-->
-  <ion-grid class="list-cards">
+  <!-- <ion-grid class="list-cards">
     <ion-row>
+       
       <ion-col *ngFor="let item of items" col-6 class="product" (click)="viewItem(item.id)">
+          <ion-card>
+        <div>{{ item.tituloAnuncio }}</div>
+          <ion-badge color="primary">{{item.categoria.nome}}</ion-badge>
         <div class="card light-bg">
-          <img src="{{ item.thumb }}" alt="{{ item.name }}">
-          <div class="price" text-center>{{ item.price | currency:'USD':true }}</div>
+          <img src="{{ item.foto }}" alt="{{ item.tituloAnuncio }}">
+         <div class="price" >{{ item.tituloAnuncio }}</div> 
+          <span ion-text color="gray" class="pull-right">
+            {{ item.categoria.nome}}
+        </span>
+
         </div>
+      </ion-card>
       </ion-col>
     </ion-row>
-  </ion-grid>
+  </ion-grid> -->
+
+  <ion-list no-margin class="list-full-border list-products"
+  [ngClass]="{'grid': viewType == 'grid', 'list': viewType == 'list'}">
+<ion-item class="product" *ngFor="let item of items | slice:0:5; let i = index" (click)="viewItem(item.id)">
+<ion-thumbnail item-left>
+<img src="{{item.foto}}">
+</ion-thumbnail>
+<!--item's information-->
+<div>
+<div text-wrap>{{ item.tituloAnuncio }}</div>
+<div>
+ <span ion-text color="danger" >{{ item.usuario.name }}</span>
+<!-- <span ion-text color="danger" *ngIf="!item.sale_price">{{ item.price | currency:'USD':true }}</span> -->
+</div>
+<div class="origin-price text-sm">
+<!-- <span class="text-decoration">{{ item.categoria.nome}}</span>  -->
+<!-- <span *ngIf="item.sale_price" class="discount-rate" ion-text color="danger">{{ discountPercent(item.price, item.sale_price) }}%</span> -->
+</div>
+<div class="bottom-info text-sm">
+<!-- <span ion-text color="gray" class="pull-left" *ngIf="item.shipping == 0">Free shipping</span> -->
+<!-- <span ion-text color="gray" class="pull-left"> {{ item.categoria.nome}}</span> -->
+ 
+<span ion-text color="gray" class="pull-right">
+    {{ item.categoria.nome}}
+</span>
+<div class="clear"></div>
+</div>
+<div class="bottom-info text-sm">
+  <!-- <span ion-text color="gray" class="pull-left" *ngIf="item.shipping == 0">Free shipping</span> -->
+  <!-- <span ion-text color="gray" class="pull-left"> {{ item.categoria.nome}}</span> -->
+  <span ion-text color="gray" class="pull-right">
+     Data Anuncio: {{ item.dataAnuncio | date }}
+  </span>      
+  
+  <div class="clear"></div>
+</div>
+</div>
+</ion-item>
+</ion-list>
 
 </ion-content>

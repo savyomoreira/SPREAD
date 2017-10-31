@@ -9,7 +9,7 @@ import {SearchPage} from "../search/search";
 import {CartPage} from "../cart/cart";
 
 import {ListaCategotiaPage} from '../lista-categotia/lista-categotia';
-
+import {AnuncioService} from '../../services/anuncio-service';
 
 import {ListAnuncioPage} from "../lista-anuncio/lista-anuncio";
 /*
@@ -42,12 +42,20 @@ export class HomePage {
   // list of items
   public items: any;
 
-  constructor(public nav: NavController, public categoryService: CategoryService, public itemService: ItemService) {
+  constructor(public nav: NavController,
+     public categoryService: CategoryService, 
+     private anuncioService: AnuncioService,
+     public itemService: ItemService) {
     categoryService.findAll().subscribe(data =>{
       this.categories = data;
     });
 
-    this.items = itemService.getAll();
+    this.anuncioService.findAll().subscribe(data => {
+      this.items = data;
+      // console.log(data);
+    })
+
+    //this.items = itemService.getAll();
   }
 
   // view categories

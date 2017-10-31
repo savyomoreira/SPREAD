@@ -21,7 +21,7 @@ import {NewsService} from '../services/news-service';
 import {AnuncioService} from '../services/anuncio-service';
 import {SolicitacaoService} from '../services/solicitacao-service';
 import {LoginService} from '../services/login-service';
-
+import {BairroService} from '../services/bairro-service';
 
 // end import services
 // end import services
@@ -135,6 +135,7 @@ import {ListAnuncioPage} from '../pages/lista-anuncio/lista-anuncio';
     SolicitacaoService,
     StoreService,
     CartService,
+    BairroService,
     OrderService,
     NewsService,
     AnuncioService

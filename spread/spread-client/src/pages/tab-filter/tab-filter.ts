@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {NavController, ViewController} from 'ionic-angular';
 
+import {BairroService} from '../../services/bairro-service';
 
 /*
  Generated class for the LoginPage page.
@@ -18,7 +19,16 @@ export class TabFilterPage {
     shipTo: ''
   }
 
-  constructor(public nav: NavController, public viewCtrl: ViewController) {
+  estados: any;
+
+  constructor(public nav: NavController,
+    private estadoService: BairroService,
+    public viewCtrl: ViewController) {
+      estadoService.findAll().subscribe(data=>{
+          this.estados = data;
+          console.log(data)
+        });
+
   }
 
   // close modal
