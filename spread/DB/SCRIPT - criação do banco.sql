@@ -1,8 +1,8 @@
 CREATE SCHEMA `base_tcc` DEFAULT CHARACTER SET utf8 ;
 
 
-drop table IF EXISTS USUARIO; 
-create table USUARIO(
+drop table IF EXISTS `base_tcc`.USUARIO; 
+create table `base_tcc`.USUARIO(
   id INT(6) primary key AUTO_INCREMENT,
   nome varchar(100) not null,
   sexo varchar(9) not null CHECK (sexo = 'MASCULINO' or 'FEMININO'),
@@ -17,8 +17,8 @@ create table USUARIO(
   complemento varchar(100)
 );
 
-drop table IF EXISTS ANUNCIO;
-create table ANUNCIO(
+drop table IF EXISTS `base_tcc`.ANUNCIO;
+create table `base_tcc`.ANUNCIO(
   id INT(6) primary key AUTO_INCREMENT,
   descicao varchar(100) not null,
   id_usuario INT(6),
@@ -26,7 +26,7 @@ create table ANUNCIO(
   
 );
 
-create table AGENDAMENTO(
+create table `base_tcc`.AGENDAMENTO(
 	ID_AGENDAMENTO int(6) primary key auto_increment,
     ID_ANUNCIO INT,
     ID_USUARIO_CONTRATANTE INT,
@@ -34,8 +34,8 @@ create table AGENDAMENTO(
     COMENTARIO varchar(200)
 );
 
-DROP TABLE if exists AVALIACAO;
-create table AVALIACAO(
+DROP TABLE if exists `base_tcc`.AVALIACAO;
+create table `base_tcc`.AVALIACAO(
 	ID_AVALIACAO int(6) primary key auto_increment,
     ID_AGENDAMENTO INT NOT NULL,
     DATA_AVALIACAO datetime NOT NULL,
@@ -43,17 +43,17 @@ create table AVALIACAO(
     COMENTARIO varchar(200) NOT NULL
 );
 
-ALTER TABLE AVALIACAO
-ADD FOREIGN KEY (ID_AGENDAMENTO) REFERENCES AGENDAMENTO(ID_AGENDAMENTO); 
+ALTER TABLE `base_tcc`.AVALIACAO
+ADD FOREIGN KEY (ID_AGENDAMENTO) REFERENCES `base_tcc`.AGENDAMENTO(ID_AGENDAMENTO); 
 
-ALTER TABLE ANUNCIO
-ADD FOREIGN KEY (id_usuario) REFERENCES USUARIO(id); 
+ALTER TABLE `base_tcc`.ANUNCIO
+ADD FOREIGN KEY (id_usuario) REFERENCES `base_tcc`.USUARIO(id); 
 
-ALTER TABLE AGENDAMENTO
-ADD FOREIGN KEY (ID_USUARIO_CONTRATANTE) REFERENCES USUARIO(id); 
+ALTER TABLE `base_tcc`.AGENDAMENTO
+ADD FOREIGN KEY (ID_USUARIO_CONTRATANTE) REFERENCES `base_tcc`.USUARIO(id); 
 
-ALTER TABLE AGENDAMENTO
-ADD FOREIGN KEY (ID_ANUNCIO) REFERENCES ANUNCIO(id); 
+ALTER TABLE `base_tcc`.AGENDAMENTO
+ADD FOREIGN KEY (ID_ANUNCIO) REFERENCES `base_tcc`.ANUNCIO(id); 
 
 
 ALTER TABLE `base_tcc`.`ANUNCIO` 
@@ -114,5 +114,20 @@ ALTER TABLE base_tcc.CIDADE
 ADD FOREIGN KEY (id_estado) 
 REFERENCES base_tcc.ESTADO(id_estado); 
 
+create table  base_tcc.BAIRRO(
+	id_bairro int(6) primary key auto_increment,
+	id_cidade int(6),
+	nome varchar(100) NOT NULL
+);
+
+ALTER TABLE base_tcc.BAIRRO
+ADD FOREIGN KEY (id_cidade) 
+REFERENCES base_tcc.CIDADE(id_cidade); 
+
+ ALTER TABLE `base_tcc`.`ANUNCIO` 
+drop COLUMN `descicao`;
+ 
+ ALTER TABLE `base_tcc`.`ANUNCIO` 
+ADD COLUMN `descricao` varchar(255);
 
 

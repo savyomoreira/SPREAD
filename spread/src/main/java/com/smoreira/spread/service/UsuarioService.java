@@ -18,7 +18,7 @@ public class UsuarioService extends BaseService {
         return usuarioRepository.findAll();
     }
 
-    public Usuario getOne(Integer id){
+    public Usuario getOne(Long id){
         return usuarioRepository.findOne(id);
     }
 

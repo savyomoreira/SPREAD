@@ -11,7 +11,8 @@ import { Headers, RequestOptions, ResponseContentType } from '@angular/http';
 @Injectable()
 export class AbstractHttpService {
 
-    protected url: string = 'http://localhost:8080/';
+    //protected url: string = 'http://localhost:8080/';
+    protected url: string = 'http://138.197.27.106:8080/'
     protected http: Http;
     private extractData;
     private handleError;

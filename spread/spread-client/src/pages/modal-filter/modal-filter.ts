@@ -4,7 +4,7 @@ import {TabFilterPage} from "../tab-filter/tab-filter";
 import {TabAttributePage} from "../tab-attribute/tab-attribute";
 
 
-import {EstadoService} from '../../services/estado-service';
+//import {EstadoService} from '../../services/estado-service';
 /*
  Generated class for the LoginPage page.
 
