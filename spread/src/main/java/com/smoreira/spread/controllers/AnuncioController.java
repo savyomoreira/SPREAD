@@ -29,6 +29,11 @@ public class AnuncioController{
         return new ResponseEntity(new AnuncioDTO(anuncio), HttpStatus.OK);
     }
 
+    @RequestMapping(value = "/byCategoria/{idCategoria}",method = RequestMethod.GET)
+    public ResponseEntity<?> getByCategoria(@PathVariable Long idCategoria){
+        return new ResponseEntity(anuncioService.getByCategoria(idCategoria), HttpStatus.OK);
+    }
+
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<?> save(@RequestBody Anuncio anuncio){
         anuncioService.save(anuncio);

@@ -13,5 +13,9 @@ export class AnuncioService extends GenericService {
   constructor(public http: Http) {
     super('anuncio/', http);
   }
+
+  findByCategoria(idCategoria){
+    return this.getMethod('anuncio/byCategoria/' + idCategoria);
+  }
  
 }

@@ -28,6 +28,10 @@ public class AnuncioService {
         return anuncioRepository.getOne(id);
     }
 
+    public List<Anuncio> getByCategoria(Long id){
+        return anuncioRepository.findByCategoriaId(id);
+    }
+
     public void save(Anuncio anuncio){
         anuncio.setCategoria(categoriaAnuncioService.getOne(anuncio.getCategoria().getId()));
         anuncio.setUsuario(usuarioService.getOne(1L));

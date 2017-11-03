@@ -9,6 +9,7 @@ import {AnuncioService} from '../../services/anuncio-service';
 import {ModalFilterPage} from "../modal-filter/modal-filter";
 import {ItemPage} from "../item/item";
 import {CartPage} from "../cart/cart";
+import { NavParams } from 'ionic-angular';
 
 /*
  Generated class for the LoginPage page.
@@ -37,15 +38,16 @@ export class ListAnuncioPage {
       public itemService: ItemService, 
       public categoryService: CategoryService,
       public modalCtrl: ModalController,
+      public navParams: NavParams, 
       public actionSheetCtrl: ActionSheetController,
      private anuncioService: AnuncioService
     ) {
     // get list items of a category as sample
     // this.items = itemService.getAll();
     // console.log(this.items)
-    this.anuncioService.findAll().subscribe(data => {
+    this.anuncioService.findByCategoria(navParams.get('id')).subscribe(data => {
       this.items = data;
-      // console.log(data);
+      console.log(navParams.get('id'));
     })
 
     // set category info
