@@ -12,12 +12,16 @@ import java.util.Date;
 public class SolicitacoeServico {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_solicitacao_servico")
     private Long id;
 
     @ManyToOne(targetEntity = Anuncio.class)
     @JoinColumn(name = "id_anuncio", nullable = true)
     private Anuncio anuncio;
+
+    @Column(name = "descricao")
+    private String descricao;
 
     @ManyToOne(targetEntity = Usuario.class)
     @JoinColumn(name = "id_cliente", nullable = true)

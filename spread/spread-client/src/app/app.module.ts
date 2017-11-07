@@ -28,6 +28,7 @@ import {BairroService} from '../services/bairro-service';
 
 // import pages
 
+import {ModalSolicitacaoPage} from '../pages/modal-solicitacao/modal-solicitacao';
 import {CadastroAnuncioPage} from '../pages/cadastro-anuncio/cadastro-anuncio';
 import {ListaCategotiaPage} from '../pages/lista-categotia/lista-categotia';
 import {ListSolicitacoesServicoPage} from '../pages/lista-solicitacoes-servico/lista-solicitacoes-servico';
@@ -70,6 +71,7 @@ import {ListAnuncioPage} from '../pages/lista-anuncio/lista-anuncio';
     ListAnuncioPage,
     ListaCategotiaPage,
     CadastroAnuncioPage,
+    ModalSolicitacaoPage,
     ListSolicitacoesServicoPage,
     HomePage,
     ItemPage,
@@ -100,6 +102,7 @@ import {ListAnuncioPage} from '../pages/lista-anuncio/lista-anuncio';
     CategoriesPage,
     ListSolicitacoesServicoPage,
     CategoryPage,
+    ModalSolicitacaoPage,
     CadastroAnuncioPage,
     ChangePasswordPage,
     CurrencyConverterPage,

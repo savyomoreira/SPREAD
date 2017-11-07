@@ -130,4 +130,6 @@ drop COLUMN `descicao`;
  ALTER TABLE `base_tcc`.`ANUNCIO` 
 ADD COLUMN `descricao` varchar(255);
 
+alter table base_tcc.SOLICITACAO_SERVICO add column descricao varchar(250);
+
 

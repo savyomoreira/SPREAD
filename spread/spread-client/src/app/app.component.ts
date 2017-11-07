@@ -54,54 +54,54 @@ export class MyApp {
       count: 0,
       component: ListSolicitacoesServicoPage
     },
-    {
-      title: 'Lista_categoria',
-      icon: 'ios-list-box-outline',
-      count: 0,    
-      component: ListaCategotiaPage
-    },
+    // {
+    //   title: 'Lista_categoria',
+    //   icon: 'ios-list-box-outline',
+    //   count: 0,    
+    //   component: ListaCategotiaPage
+    // },
 
-    {
-      title: 'Categories',
-      icon: 'ios-list-box-outline',
-      count: 0,
-      component: CategoriesPage
-    },
+    // {
+    //   title: 'Categories',
+    //   icon: 'ios-list-box-outline',
+    //   count: 0,
+    //   component: CategoriesPage
+    // },
 
-    {
-      title: 'WishList',
-      icon: 'md-heart-outline',
-      count: 2,
-      component: WishListPage
-    },
+    // {
+    //   title: 'WishList',
+    //   icon: 'md-heart-outline',
+    //   count: 2,
+    //   component: WishListPage
+    // },
 
-    {
-      title: 'My Order',
-      icon: 'ios-timer-outline',
-      count: 0,
-      component: MyOrderPage
-    },
+    // {
+    //   title: 'My Order',
+    //   icon: 'ios-timer-outline',
+    //   count: 0,
+    //   component: MyOrderPage
+    // },
 
-    {
-      title: 'My Account',
-      icon: 'ios-contact-outline',
-      count: 0,
-      component: MyAccountPage
-    },
+    // {
+    //   title: 'My Account',
+    //   icon: 'ios-contact-outline',
+    //   count: 0,
+    //   component: MyAccountPage
+    // },
 
-    {
-      title: 'Cart',
-      icon: 'ios-cart-outline',
-      count: 1,
-      component: CartPage
-    },
+    // {
+    //   title: 'Cart',
+    //   icon: 'ios-cart-outline',
+    //   count: 1,
+    //   component: CartPage
+    // },
 
-    {
-      title: 'Settings',
-      icon: 'ios-settings-outline',
-      count: 0,
-      component: SettingsPage
-    },
+    // {
+    //   title: 'Settings',
+    //   icon: 'ios-settings-outline',
+    //   count: 0,
+    //   component: SettingsPage
+    // },
 
     {
       title: 'Logout',

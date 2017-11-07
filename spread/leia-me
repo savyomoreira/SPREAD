@@ -1,0 +1,5 @@
+docker run --name some-nginx -v /home/deploy/spread-front:/usr/share/nginx/html:ro -d nginx
+docker build -f Dockerfile -t spread-java .
+docker run -d -p3306:3306 -e MYSQL_ROOT_PASSWORD=SA12345 centurylink/mysql
+scp -r deploy root@138.197.27.106:/home/deploy-spread/
+ionic cordova run android --device

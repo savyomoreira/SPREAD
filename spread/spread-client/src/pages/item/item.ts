@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {NavController, ModalController} from 'ionic-angular';
 import {ItemService} from '../../services/item-service';
-import {ModalItemOptionPage} from "../modal-item-option/modal-item-option";
+import {ModalSolicitacaoPage} from "../modal-solicitacao/modal-solicitacao";
 import { NavParams } from 'ionic-angular';
 
 import {AnuncioService} from '../../services/anuncio-service';
@@ -45,7 +45,7 @@ export class ItemPage {
   // open item option modal
   showOptions(item) {
     // show modal
-    let modal = this.modalCtrl.create(ModalItemOptionPage, {item: item});
+    let modal = this.modalCtrl.create(ModalSolicitacaoPage, {item: item});
 
     // listen for modal close
     modal.onDidDismiss(confirm => {

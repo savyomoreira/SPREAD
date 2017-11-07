@@ -31,6 +31,8 @@ export class ListAnuncioPage {
   // view type
   public viewType = 'list';
 
+  categoryName= 'Nome Categoria'
+
   // sort by
   public sortBy = 'Best Match';
 
@@ -42,12 +44,10 @@ export class ListAnuncioPage {
       public actionSheetCtrl: ActionSheetController,
      private anuncioService: AnuncioService
     ) {
-    // get list items of a category as sample
-    // this.items = itemService.getAll();
-    // console.log(this.items)
+    this.categoryName = navParams.get('nomeCategoria');
+
     this.anuncioService.findByCategoria(navParams.get('id')).subscribe(data => {
       this.items = data;
-      console.log(navParams.get('id'));
     })
 
     // set category info

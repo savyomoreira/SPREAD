@@ -64,8 +64,8 @@ export class HomePage {
   }
 
   // view a category
-  viewCategory(catId) {
-    this.nav.push(ListAnuncioPage, {id: catId});
+  viewCategory(catId, catNome) {
+    this.nav.push(ListAnuncioPage, {id: catId, nomeCategoria: catNome});
   }
 
   // view a item
