@@ -11,8 +11,13 @@ public class SolicitacaoServicoMapper {
         mappedSolicitacaoServicoToDTO(List<SolicitacoeServico> solicitacaoList){
         List<SolicitacaoServicoDTO> solicitacaoServicoDTOList = new ArrayList<>();
         solicitacaoList.forEach(data ->
-                solicitacaoServicoDTOList.add(new SolicitacaoServicoDTO(data)));
+                solicitacaoServicoDTOList.add(mappedSolicitacaoServicoToDTO(data)));
         return solicitacaoServicoDTOList;
+    }
+
+    public static SolicitacaoServicoDTO
+    mappedSolicitacaoServicoToDTO(SolicitacoeServico solicitacao){
+        return new SolicitacaoServicoDTO(solicitacao);
     }
 
 }

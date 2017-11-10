@@ -133,3 +133,12 @@ ADD COLUMN `descricao` varchar(255);
 alter table base_tcc.SOLICITACAO_SERVICO add column descricao varchar(250);
 
 
+alter table base_tcc.CATEGORIA_ANUNCIO add column foto MEDIUMTEXT;
+
+ALTER TABLE `base_tcc`.`SOLICITACAO_SERVICO` 
+drop COLUMN `status_solicitacao`;
+
+ALTER TABLE `base_tcc`.`SOLICITACAO_SERVICO` 
+ADD COLUMN `status_solicitacao` varchar(50);
+
+

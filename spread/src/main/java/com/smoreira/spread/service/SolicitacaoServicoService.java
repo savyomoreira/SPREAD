@@ -21,6 +21,11 @@ public class SolicitacaoServicoService extends BaseService {
                 mappedSolicitacaoServicoToDTO(solicitacaoServicoRepository.getByIdAnunciante(idAnunciante));
     }
 
+    public SolicitacaoServicoDTO findOne(Long id){
+        return SolicitacaoServicoMapper.
+                mappedSolicitacaoServicoToDTO(solicitacaoServicoRepository.getOne(id));
+    }
+
     public void save(SolicitacoeServico solicitacoeServico){
         solicitacaoServicoRepository.save(solicitacoeServico);
     }

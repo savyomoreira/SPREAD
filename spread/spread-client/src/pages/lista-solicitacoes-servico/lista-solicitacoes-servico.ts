@@ -9,7 +9,7 @@ import {SolicitacaoService} from '../../services/solicitacao-service';
 import {AnuncioService} from '../../services/anuncio-service';
 
 import {ModalFilterPage} from "../modal-filter/modal-filter";
-import {ItemPage} from "../item/item";
+import {DetalheSolicitacaoPage} from "../detalhe-solicitacao/detalhe-solicitacao";
 import {CartPage} from "../cart/cart";
 
 /*
@@ -139,7 +139,7 @@ export class ListSolicitacoesServicoPage {
   // view a item
   viewItem(itemId) {
     console.log(itemId)
-    this.nav.push(ItemPage, {id: itemId})
+    this.nav.push(DetalheSolicitacaoPage, {id: itemId})
   }
 
   // view cart

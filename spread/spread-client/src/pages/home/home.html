@@ -15,12 +15,8 @@
       <button ion-button (click)="goToSearch()">
         <ion-icon name="search"></ion-icon>
       </button>
-      <button ion-button>
-        <ion-icon name="qr-scanner"></ion-icon>
-      </button>
-      <button ion-button (click)="goToCart()">
-        <ion-icon name="cart"></ion-icon>
-      </button>
+      
+     
     </ion-buttons>
   </ion-navbar>
 
@@ -42,7 +38,7 @@
     <ion-list class="cat-list">
       <ion-row>
         <ion-col *ngFor="let cat of categories | slice:0:3; let i = index" (click)="viewCategory(cat.id, cat.nome)">
-          <img src="assets/img/categories/accessories.png" alt="">
+          <img src="{{cat.foto}}" alt="">
           <div text-center>{{ cat.nome }}</div>
         </ion-col>
         <ion-col text-center (click)="viewCategorias()">

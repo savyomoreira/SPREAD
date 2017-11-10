@@ -18,23 +18,16 @@ import {ListAnuncioPage} from "../lista-anuncio/lista-anuncio";
  See http://ionicframework.com/docs/v2/components/#navigation for more info on
  Ionic pages and navigation.
  */
+
+declare var cordova: any;
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
   // list slides for slider
-  public slides = [
-    {
-      src: 'assets/img/slide_1.jpg'
-    },
-    {
-      src: 'assets/img/slide_2.jpg'
-    },
-    {
-      src: 'assets/img/slide_3.jpg'
-    }
-  ];
+  
 
   // list categories
   public categories: any;

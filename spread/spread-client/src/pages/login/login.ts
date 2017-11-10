@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {NavController} from 'ionic-angular';
+import {NavController, ToastController} from 'ionic-angular';
 import {RegisterPage} from "../register/register";
 import {HomePage} from '../home/home';
 import {ForgotPasswordPage} from "../forgot-password/forgot-password";
@@ -24,7 +24,9 @@ export class LoginPage {
 
   currentUser: any;
 
-  constructor(public nav: NavController, public loginService: LoginService) {
+  constructor(public nav: NavController,
+    public toastCtrl: ToastController,
+     public loginService: LoginService) {
 
     this.currentUser = JSON.parse(sessionStorage.getItem('user'));
     if(this.currentUser != null){
@@ -43,6 +45,14 @@ export class LoginPage {
       sessionStorage.setItem('user', JSON.stringify(data.json()));
       this.nav.setRoot(HomePage);
     }).catch(data => {
+
+      let toast = this.toastCtrl.create({
+        message: 'Anuncio salvo com sucesso!',
+        duration: 5000,
+        position: 'middle'
+      });
+    
+      toast.present();
       console.log('erro no login')
     });
     

@@ -1,0 +1,73 @@
+<!--
+  Generated template for the ProfilePage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title *ngIf="item != null && item.cliente != null">Solicitação de {{ item.cliente.nome }}</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="goToCart()">
+        <ion-icon name="cart"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content *ngIf="item != null" class=" common-bg">
+
+  <div class="card light-bg">
+
+      <img src="{{item.anuncio.foto}}">
+
+       <div text-center padding margin-top class="border-bottom">
+      <p>{{ item.anuncio.tituloAnuncio }}</p>    
+    </div>
+
+  </div>
+
+  <!--item options-->
+  <div class="card light-bg" margin-top>
+    <ion-item class="no-border">
+      <div>
+       
+        <div *ngIf="item.categoria != null"> 
+          {{item.categoria.nome}}
+        </div>
+        
+        <div>
+          <span ion-text color="gray" class="pull-left" *ngIf="item.usuario != null">{{item.usuario.name}}</span>
+         </div>
+      </div>
+
+      <div item-right>
+        <span class="bold" ion-text color="secondary" *ngIf="item != null && item.statusSolicitacao != null">{{item.statusSolicitacao}}</span>
+      </div>
+    </ion-item>
+
+    <ion-grid>
+        <ion-row>
+          <!-- <ion-col>
+            <button ion-button block class="btn-add-cart" (click)="showOptions(item)">Fazer Perguntas</button>
+          </ion-col> -->
+          <ion-col>
+            <button ion-button color="primary" block (click)="showOptions(item)">Comfirmar solicitação</button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+  </div>
+
+  <!--Description-->
+  <div class="card light-bg" margin-top>
+    <div class="border-bottom" padding>Descrição anúncio</div>
+    <div padding>{{ item.descricao }}</div>
+  </div>
+
+ 
+</ion-content>

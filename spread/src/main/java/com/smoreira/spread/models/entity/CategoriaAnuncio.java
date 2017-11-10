@@ -16,4 +16,8 @@ public class CategoriaAnuncio {
 
     @Column(name= "nome")
     private String nome;
+
+    @Column(name = "foto", length = 65535)
+    private String foto;
+
 }

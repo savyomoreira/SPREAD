@@ -23,7 +23,8 @@
         </ion-item>
 
     <ion-item>
-      <ion-input [(ngModel)]="anuncio.descricao" type="text" placeholder="Descrição da habilidade"></ion-input>
+        <ion-textarea [(ngModel)]="anuncio.descricao" type="text" placeholder="Descrição da habilidade"></ion-textarea>
+      <!-- <ion-input [(ngModel)]="anuncio.descricao" type="text" placeholder="Descrição da habilidade"></ion-input> -->
     </ion-item>
 
     <!-- <ion-item>
@@ -31,7 +32,7 @@
     </ion-item> -->
 
     <ion-item>
-      <ion-label>Categoria da habilidade</ion-label>
+      <ion-label>Categoria</ion-label>
       <ion-select [(ngModel)]="categoriaSelecionada">
         
           <ion-option *ngFor="let categoria of categoriaList" 
@@ -40,10 +41,19 @@
 
       </ion-select>
     </ion-item>
-
+    <ion-item>
+       
+           
+             <input type="file" id="fileElem" multiple accept="image/*" 
+             style="display:none"
+            (change)="getFiles($event)"
+             >
+             <a ion-button href="#" onclick=" document.getElementById('fileElem').click()" id="fileSelect" >Adicionar Imagem</a>
+    <br/>  <img src="{{base64textString}}" alt="">
+    </ion-item> 
   </ion-list>
 
   <button ion-button color="primary" block (click)="register()">Criar Anuncio</button>
-
+  
 
 </ion-content>

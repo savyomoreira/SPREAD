@@ -22,6 +22,7 @@ export class AbstractHttpService {
     }
 
     protected getMethod(relativePath: string) {
+        console.log(this.url + relativePath)
         return this.http.get(this.url + relativePath)
         .map(res => res.json());
     }
@@ -50,5 +51,11 @@ export class AbstractHttpService {
     protected getHeaders() {
         const headers = new Headers();
         headers.set('Content-Type', 'application/json');return headers;
+    }
+
+    getMultiPartHeaders() {
+        const headers = new Headers();
+        headers.set('Content-Type', 'multipart/form-data');
+        return headers;
     }
 }

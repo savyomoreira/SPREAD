@@ -17,5 +17,9 @@ export class SolicitacaoService extends GenericService {
   findByIdPrestador(idPrestador){
     return this.getMethod('solicitacaoService/' + idPrestador);
   }
+
+  findByID(value){
+    return this.getMethod('solicitacaoService/one/' + value);
+ }
  
 }

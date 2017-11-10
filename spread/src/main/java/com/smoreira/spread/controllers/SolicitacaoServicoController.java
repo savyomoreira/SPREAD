@@ -23,6 +23,11 @@ public class SolicitacaoServicoController {
         return new ResponseEntity(solicitacaoService.getByIdAnunciante(id), HttpStatus.OK);
     }
 
+    @RequestMapping(value = "one/{id}" ,method = RequestMethod.GET)
+    public ResponseEntity<?> getone(@PathVariable Long id){
+        return new ResponseEntity(solicitacaoService.findOne(id), HttpStatus.OK);
+    }
+
     @PostMapping()
     public ResponseEntity<?> save(@RequestBody SolicitacoeServico solicitacoeServico){
         solicitacoeServico.setStatusSolicitacao(StatusSolicitacaoEnum.SERVICO_AGENDADO);

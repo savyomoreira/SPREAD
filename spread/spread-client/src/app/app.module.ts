@@ -7,6 +7,10 @@ import {SplashScreen} from '@ionic-native/splash-screen';
 
 import { HttpModule } from '@angular/http';
 
+import { File } from '@ionic-native/file';
+import { Transfer } from '@ionic-native/transfer';
+import { FilePath } from '@ionic-native/file-path';
+import { Camera } from '@ionic-native/camera';
 // import services
 
 import {GenericService} from '../services/generic.service';
@@ -55,6 +59,8 @@ import {TabFilterPage} from '../pages/tab-filter/tab-filter';
 import {WelcomePage} from '../pages/welcome/welcome';
 import {WishListPage} from '../pages/wish-list/wish-list';
 
+import {DetalheSolicitacaoPage} from '../pages/detalhe-solicitacao/detalhe-solicitacao';
+import {ModalConfirmacaoSolicitacaoPage} from '../pages/modal-confirmacao-solicitacao/modal-confirmacao-solicitacao';
 import {ListAnuncioPage} from '../pages/lista-anuncio/lista-anuncio';
 
 // end import pages
@@ -67,12 +73,14 @@ import {ListAnuncioPage} from '../pages/lista-anuncio/lista-anuncio';
     CategoryPage,
     ChangePasswordPage,
     CurrencyConverterPage,
+    ModalConfirmacaoSolicitacaoPage,
     ForgotPasswordPage,
     ListAnuncioPage,
     ListaCategotiaPage,
     CadastroAnuncioPage,
     ModalSolicitacaoPage,
     ListSolicitacoesServicoPage,
+    DetalheSolicitacaoPage,
     HomePage,
     ItemPage,
     LoginPage,
@@ -100,6 +108,8 @@ import {ListAnuncioPage} from '../pages/lista-anuncio/lista-anuncio';
     MyApp,
     CartPage,
     CategoriesPage,
+    ModalConfirmacaoSolicitacaoPage,
+    DetalheSolicitacaoPage,
     ListSolicitacoesServicoPage,
     CategoryPage,
     ModalSolicitacaoPage,
@@ -126,7 +136,7 @@ import {ListAnuncioPage} from '../pages/lista-anuncio/lista-anuncio';
     WelcomePage,
     WishListPage
   ],
-  providers: [
+  providers: [    
     StatusBar,
     SplashScreen,
     CategoryService,
@@ -141,7 +151,13 @@ import {ListAnuncioPage} from '../pages/lista-anuncio/lista-anuncio';
     BairroService,
     OrderService,
     NewsService,
-    AnuncioService
+    AnuncioService,
+
+    File,
+    Transfer,
+    Camera,
+    FilePath,
+  
     /* import services */
   ]
 })
