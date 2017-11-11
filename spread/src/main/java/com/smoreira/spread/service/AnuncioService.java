@@ -33,10 +33,13 @@ public class AnuncioService {
         return anuncioRepository.findByCategoriaId(id);
     }
 
-    public void save(Anuncio anuncio){
+    public Long save(Anuncio anuncio){
         anuncio.setCategoria(categoriaAnuncioService.getOne(anuncio.getCategoria().getId()));
 
         anuncio.setDataAnuncio(new Date());
-        anuncioRepository.save(anuncio);
+
+        Long result = anuncioRepository.save(anuncio).getId();
+
+       return result;
     }
 }

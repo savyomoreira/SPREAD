@@ -53,7 +53,8 @@ export class LoginPage {
       });
     
       toast.present();
-      console.log('erro no login')
+      console.log(data);
+      console.log('erro no login');
     });
     
   }

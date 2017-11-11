@@ -3,7 +3,7 @@ import {NavController, ModalController, ToastController} from 'ionic-angular';
 import {ItemService} from '../../services/item-service';
 import {ModalConfirmacaoSolicitacaoPage} from "../modal-confirmacao-solicitacao/modal-confirmacao-solicitacao";
 import { NavParams } from 'ionic-angular';
-
+import {ListSolicitacoesServicoPage} from '../lista-solicitacoes-servico/lista-solicitacoes-servico';
 import {AnuncioService} from '../../services/anuncio-service';
 
 import {SolicitacaoService} from '../../services/solicitacao-service';
@@ -54,7 +54,7 @@ export class DetalheSolicitacaoPage {
         duration: 5000,
         position: 'middle'
       });
-  
+      this.nav.setRoot(ListSolicitacoesServicoPage)
       toast.present();
     })
   }

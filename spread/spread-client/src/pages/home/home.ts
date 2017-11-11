@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnChanges,SimpleChanges} from '@angular/core';
 import {NavController} from 'ionic-angular';
 import {CategoryService} from '../../services/category-service';
 import {ItemService} from '../../services/item-service';
@@ -23,7 +23,7 @@ import {ListAnuncioPage} from "../lista-anuncio/lista-anuncio";
   selector: 'page-home',
   templateUrl: 'home.html'
 })
-export class HomePage {
+export class HomePage implements OnChanges{
   // list slides for slider
   
 
@@ -47,6 +47,10 @@ export class HomePage {
     })
 
     //this.items = itemService.getAll();
+  }
+
+  ngOnChanges(changes: SimpleChanges){
+      console.log('refresh')
   }
 
   // view categories

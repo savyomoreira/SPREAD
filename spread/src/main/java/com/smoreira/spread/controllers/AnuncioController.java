@@ -36,7 +36,6 @@ public class AnuncioController{
 
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<?> save(@RequestBody Anuncio anuncio){
-        anuncioService.save(anuncio);
-        return new ResponseEntity(HttpStatus.OK);
+        return new ResponseEntity(anuncioService.save(anuncio), HttpStatus.OK);
     }
 }

@@ -47,9 +47,13 @@
         <div *ngIf="item.anuncio.categoria != null"> 
           {{item.anuncio.categoria.nome}}<br/>
           <span class="bold" ion-text color="secondary" 
-              *ngIf="item != null && item.statusSolicitacao != null">
-              {{item.statusSolicitacao}}
-          </span><br/>
+              *ngIf="item != null && item.statusSolicitacao != null && item.statusSolicitacao !== 'Servico Realizado'">
+              {{item.statusSolicitacao}}<br/>
+          </span>
+          <span class="bold" ion-text color="danger" 
+              *ngIf="item != null && item.statusSolicitacao != null && item.statusSolicitacao === 'Servico Realizado'">
+              {{item.statusSolicitacao}}<br/>
+          </span>
           <span *ngIf="item != null && 
                 item.statusSolicitacao != null &&
                  item.statusSolicitacao === 'Servico Agendado'">

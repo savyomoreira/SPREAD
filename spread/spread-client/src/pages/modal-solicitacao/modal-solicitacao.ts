@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {NavController, NavParams, ViewController, ToastController} from 'ionic-angular';
 
 import {ItemService} from '../../services/item-service';
-
+import {HomePage} from '../home/home';
 import {SolicitacaoService} from '../../services/solicitacao-service';
 /*
  Generated class for the LoginPage page.
@@ -62,6 +62,8 @@ export class ModalSolicitacaoPage {
       position: 'middle'
     });
 
+    this.closeModal();
+    // this.nav.setRoot(HomePage)
     toast.present();
   }
 

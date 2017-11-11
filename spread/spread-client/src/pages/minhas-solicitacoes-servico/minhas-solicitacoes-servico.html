@@ -64,7 +64,10 @@
             <!-- <span ion-text color="gray" class="pull-left" *ngIf="item.shipping == 0">Free shipping</span> -->
             <!-- <span ion-text color="gray" class="pull-left"> {{ item.categoria.nome}}</span> -->
            
-            <span ion-text color="secondary"  class="pull-right">
+            <span ion-text color="secondary" *ngIf="item.statusSolicitacao !== 'Servico Realizado'" class="pull-right">
+                {{ item.statusSolicitacao}}
+            </span> 
+            <span ion-text color="danger" *ngIf="item.statusSolicitacao === 'Servico Realizado'" class="pull-right">
                 {{ item.statusSolicitacao}}
             </span> 
             <span ion-text color="gray" *ngIf="item.statusSolicitacao !== 'Aguardando confirmação'" class="pull-right">

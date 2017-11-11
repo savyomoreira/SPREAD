@@ -147,7 +147,7 @@ alter table base_tcc.USUARIO drop column bairro;
 
 alter table base_tcc.USUARIO drop column cidade;
 
-alter table base_tcc.USUARIO add column id_estado int(6);
+alter table base_tcc.USUARIO add column id_bairro int(6);
 
 ALTER TABLE base_tcc.USUARIO
 ADD FOREIGN KEY (id_bairro) 

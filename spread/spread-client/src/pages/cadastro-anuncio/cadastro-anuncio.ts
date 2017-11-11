@@ -1,6 +1,8 @@
 import {Component} from '@angular/core';
-import {NavController, ToastController} from 'ionic-angular';
+import {NavController, ToastController,ViewController, App} from 'ionic-angular';
 import {LoginPage} from '../login/login';
+import {ItemPage} from '../item/item';
+
 import {HomePage} from '../home/home';
 import {AnuncioService} from '../../services/anuncio-service';
 
@@ -32,8 +34,10 @@ export class CadastroAnuncioPage {
 
   constructor(public nav: NavController,
     private anuncioService: AnuncioService,
+    public viewCtrl: ViewController,
      public categoryService: CategoryService,
       public toastCtrl: ToastController,
+      public appCtrl: App,
       public camera: Camera
     ) {
       
@@ -63,26 +67,24 @@ getFiles(files: any) {
            console.log(this.base64textString);
    }
 
-
-  // go to login page
-  login() {
-    this.nav.push(LoginPage);
-  }
-
   // go to home page
   register() {
     this.anuncio.categoria = this.categoriaSelecionada;
-    console.log(this.anuncio);
+   
     this.anuncio.usuario = JSON.parse(sessionStorage.getItem('user'));
     this.anuncio.foto = this.base64textString;
-   this.anuncioService.save(this.anuncio)
-   let toast = this.toastCtrl.create({
-    message: 'Anuncio salvo com sucesso!',
-    duration: 5000,
-    position: 'middle'
-  });
+   this.anuncioService.save(this.anuncio).then(data =>{
+        let toast = this.toastCtrl.create({
+          message: 'Anuncio salvo com sucesso!',
+          duration: 3000,
+          position: 'middle'
+        });
 
-  toast.present();
-   this.nav.setRoot(HomePage);
+        console.log(data);
+        this.nav.setRoot(ItemPage, {id: data})
+      // this.nav.push(HomePage, {id: data}, {updateUrl: true})
+        
+   });
+  
   }
 }
