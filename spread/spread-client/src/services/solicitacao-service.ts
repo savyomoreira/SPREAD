@@ -29,5 +29,11 @@ export class SolicitacaoService extends GenericService {
  confirmacaoDeServico(idSolicitacao, dataAgendada){
   return this.putMethod('solicitacaoService/' + idSolicitacao, dataAgendada);
 }
+
+confirmarRealizacaoServico(idSolicitacao: Number){
+  return this.putMethod('solicitacaoService/confirmarRealizacaoServico/', idSolicitacao);
+}
+
+
  
 }

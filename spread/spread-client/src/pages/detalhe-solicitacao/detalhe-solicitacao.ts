@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {NavController, ModalController} from 'ionic-angular';
+import {NavController, ModalController, ToastController} from 'ionic-angular';
 import {ItemService} from '../../services/item-service';
 import {ModalConfirmacaoSolicitacaoPage} from "../modal-confirmacao-solicitacao/modal-confirmacao-solicitacao";
 import { NavParams } from 'ionic-angular';
@@ -25,6 +25,7 @@ export class DetalheSolicitacaoPage {
   constructor(public nav: NavController, public navParams: NavParams, 
     private anuncioService: AnuncioService,
     public itemService: ItemService,
+    private toastCtrl: ToastController,
     public solicitacaoService: SolicitacaoService,
     public modalCtrl: ModalController) {
 
@@ -43,6 +44,19 @@ export class DetalheSolicitacaoPage {
   // make array with range is n
   range(n) {
     return new Array(n);
+  }
+
+  confirmarRealizacaoServico(){
+    console.log(this.item.id)
+    this.solicitacaoService.confirmarRealizacaoServico(this.item.id).then(()=>{
+      let toast = this.toastCtrl.create({
+        message: 'Solicitação confirmada!',
+        duration: 5000,
+        position: 'middle'
+      });
+  
+      toast.present();
+    })
   }
 
   // open item option modal

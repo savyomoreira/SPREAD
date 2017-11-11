@@ -50,4 +50,14 @@ public class SolicitacaoServicoService extends BaseService {
 
         solicitacaoServicoRepository.save(solicitacoeServico);
     }
+
+    public void confirmarRealizacaoServico(Long idSolicitacao){
+
+        SolicitacoeServico solicitacoeServico =
+                this.solicitacaoServicoRepository.getOne(idSolicitacao);
+
+        solicitacoeServico.setStatusSolicitacao(StatusSolicitacaoEnum.SERVICO_REALIZADO);
+
+        solicitacaoServicoRepository.save(solicitacoeServico);
+    }
 }

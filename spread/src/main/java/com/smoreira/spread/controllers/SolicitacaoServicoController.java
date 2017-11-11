@@ -49,6 +49,12 @@ public class SolicitacaoServicoController {
         return new ResponseEntity(HttpStatus.OK);
     }
 
+    @PutMapping("confirmarRealizacaoServico/")
+    public ResponseEntity<?> confirmarRealizacaoServico(@RequestBody Long idSolicitacao){
+        solicitacaoService.confirmarRealizacaoServico(idSolicitacao);
+        return new ResponseEntity(HttpStatus.OK);
+    }
+
 
 
 }
