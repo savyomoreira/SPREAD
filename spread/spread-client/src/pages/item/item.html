@@ -11,11 +11,11 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title *ngIf="item != null">{{ item.tituloAnuncio }}</ion-title>
-    <ion-buttons end>
+    <!-- <ion-buttons end>
       <button ion-button (click)="goToCart()">
         <ion-icon name="cart"></ion-icon>
       </button>
-    </ion-buttons>
+    </ion-buttons> -->
   </ion-navbar>
 
 </ion-header>
@@ -34,12 +34,12 @@
 
     </ion-slides> -->
 
-    <div class="rlt">
+    <!-- <div class="rlt">
       <button ion-button class="btn-wish-list card" (click)="toggleWishList(item)" color="light">
         <ion-icon name="md-heart" color="gray" [hidden]="item.on_wish_list"></ion-icon>
         <ion-icon name="md-heart" color="danger" [hidden]="!item.on_wish_list"></ion-icon>
       </button>
-    </div>
+    </div> -->
 
     <div text-center padding margin-top class="border-bottom">
       <p>{{ item.tituloAnuncio }}</p>    
@@ -71,15 +71,16 @@
         <div *ngIf="item.categoria != null"> 
           {{item.categoria.nome}}
         </div>
+        Nome: {{ item.usuario.name }}<br/>
+        Estado: {{ item.usuario.bairro.cidade.estado.nome }}<br/>
+        Cidade: {{ item.usuario.bairro.cidade.nome }}<br/>
+        Bairro: {{ item.usuario.bairro.nome }}<br/> 
         
-        <div>
-          <span ion-text color="gray" class="pull-left" *ngIf="item.usuario != null">{{item.usuario.name}}</span>
-         </div>
       </div>
 
-      <div item-right>
+      <!-- <div item-right>
         <span class="bold" ion-text color="secondary" (click)="showOptions(item)">Servico Agendado</span>
-      </div>
+      </div> -->
     </ion-item>
 
     <ion-grid>

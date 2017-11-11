@@ -141,4 +141,17 @@ drop COLUMN `status_solicitacao`;
 ALTER TABLE `base_tcc`.`SOLICITACAO_SERVICO` 
 ADD COLUMN `status_solicitacao` varchar(50);
 
+alter table base_tcc.USUARIO drop column estado;
+
+alter table base_tcc.USUARIO drop column bairro;
+
+alter table base_tcc.USUARIO drop column cidade;
+
+alter table base_tcc.USUARIO add column id_estado int(6);
+
+ALTER TABLE base_tcc.USUARIO
+ADD FOREIGN KEY (id_bairro) 
+REFERENCES base_tcc.BAIRRO(id_bairro); 
+
+
 

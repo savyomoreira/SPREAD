@@ -10,7 +10,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Register</ion-title>
+    <ion-title>Cadastro de Usuário</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -19,26 +19,55 @@
   <ion-list class="list-form">
 
     <ion-item>
-      <ion-input type="text" placeholder="Email"></ion-input>
+      <ion-input type="text" [(ngModel)]="user.email" placeholder="Email"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-input type="text" placeholder="First Name"></ion-input>
+      <ion-input type="text" [(ngModel)]="user.name" placeholder="Nome"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-input type="text" placeholder="Last Name"></ion-input>
+      <ion-input type="text" [(ngModel)]="user.telefone" placeholder="Telefone"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-input type="password" placeholder="Password"></ion-input>
+      <ion-input type="password" [(ngModel)]="user.senha" placeholder="Senha"></ion-input>
     </ion-item>
+
+    <ion-item>
+        <ion-input type="text" [(ngModel)]="user.cep" placeholder="CEP"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-input type="text" value ="Bahia" disabled></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-input type="text" value ="Salvador" disabled></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label>Selecione o estado</ion-label>
+        <ion-select [(ngModel)]="user.bairro">
+            <ion-option *ngFor="let estado of estados" 
+            [value]="estado">{{estado.nome}}</ion-option>
+            
+        </ion-select>
+      </ion-item>
+
+    <ion-item>
+        <ion-input type="text" [(ngModel)]="user.endereco" placeholder="Endereço"></ion-input>
+     </ion-item>
+
+     <ion-item>
+        <ion-input type="text" [(ngModel)]="user.complemento" placeholder="Complemento"></ion-input>
+     </ion-item>
 
   </ion-list>
 
-  <button ion-button color="primary" block (click)="register()">Create Account</button>
+  <button ion-button color="primary" block (click)="register()">Criar conta</button>
 
-  <div class="align-bottom" padding text-center>
+  <!-- <div class="align-bottom" padding text-center>
     Have an account? <span class="bold" (click)="login()">Sign in</span>
-  </div>
+  </div> -->
 </ion-content>

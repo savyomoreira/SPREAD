@@ -4,7 +4,7 @@ import {CategoryService} from '../../services/category-service';
 import {ItemService} from '../../services/item-service';
 //mport {CategoriesPage} from "../categories/categories";
 //import {CategoryPage} from "../category/category";
-//import {ItemPage} from "../item/item";
+import {ItemPage} from "../item/item";
 import {SearchPage} from "../search/search";
 import {CartPage} from "../cart/cart";
 
@@ -18,8 +18,6 @@ import {ListAnuncioPage} from "../lista-anuncio/lista-anuncio";
  See http://ionicframework.com/docs/v2/components/#navigation for more info on
  Ionic pages and navigation.
  */
-
-declare var cordova: any;
 
 @Component({
   selector: 'page-home',
@@ -63,7 +61,7 @@ export class HomePage {
 
   // view a item
   viewItem(itemId) {
-   // this.nav.push(ItemPage, {id: itemId})
+    this.nav.push(ItemPage, {id: itemId})
   }
 
   viewCategorias(){

@@ -7,12 +7,12 @@
 <ion-header>
 
   <ion-navbar color="light">
-    <ion-buttons start>
+    <!-- <ion-buttons start>
       <button ion-button (click)="closeModal()">
         <ion-icon name="close"></ion-icon>
       </button>
-    </ion-buttons>
-    <ion-title>Confirmar Solicitação de Serviço</ion-title>
+    </ion-buttons> -->
+    <ion-title>Confirmar Solicitação</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -28,15 +28,15 @@
 
 
   <ion-item>
-      <ion-label>Data da realização do serviço</ion-label>
-      <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="myDate"></ion-datetime>
+      <ion-label>Data do serviço</ion-label>
+      <ion-datetime cancelText="Cancelar" [(ngModel)]="dataAgendamento"  doneText="Ok" displayFormat="DD/MM/YYYY"></ion-datetime>
     </ion-item>
 
   <!--add to cart-->
   <ion-grid>
     <ion-row>
       <ion-col>
-        <button ion-button block class="btn-add-cart" (click)="enviarSolicitacao()">Enviar</button>
+        <button ion-button block class="btn-add-cart" (click)="confirmarSolicitacao()">Enviar</button>
       </ion-col>
       <ion-col>
         <button ion-button color="primary" block (click)="closeModal()">Cancelar</button>

@@ -2,13 +2,7 @@ package com.smoreira.spread.models.entity;
 
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Data
 @Entity
@@ -16,6 +10,7 @@ import javax.persistence.Table;
 public class Usuario {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private Long id;
 	
@@ -34,18 +29,19 @@ public class Usuario {
 	@Column(name = "cep")
 	private String cep;
 
-	@Column(name = "bairro")
-	private String bairro;
+	@ManyToOne(targetEntity = Bairro.class, fetch = FetchType.EAGER)
+	@JoinColumn(name="id_bairro", referencedColumnName="id_bairro" )
+	private Bairro bairro;
 
 	@Column(name = "endereco")
 	private String endereco;
 
-	@Column(name = "cidade")
-	private String cidade;
-
-	@Column(name = "ESTADO")
-	private String estado;
-	// private String foto;
+//	@Column(name = "cidade")
+//	private String cidade;
+//
+//	@Column(name = "ESTADO")
+//	private String estado;
+//	// private String foto;
 
 	@Column(name = "complemento")
 	private String complemento;

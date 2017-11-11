@@ -11,11 +11,7 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title *ngIf="item != null && item.cliente != null">Solicitação de {{ item.cliente.nome }}</ion-title>
-    <ion-buttons end>
-      <button ion-button (click)="goToCart()">
-        <ion-icon name="cart"></ion-icon>
-      </button>
-    </ion-buttons>
+    
   </ion-navbar>
 
 </ion-header>
@@ -32,13 +28,33 @@
 
   </div>
 
+  <div class="card light-bg">
+      <ion-item class="no-border">
+          <div>Descrição da solicitação</div>
+    
+          <div text-center padding margin-top class="border-bottom">
+              <p>{{ item.descricao }}</p>    
+           </div>
+        </ion-item>
+      
+  </div>
+
   <!--item options-->
   <div class="card light-bg" margin-top>
     <ion-item class="no-border">
       <div>
        
-        <div *ngIf="item.categoria != null"> 
-          {{item.categoria.nome}}
+        <div *ngIf="item.anuncio.categoria != null"> 
+          {{item.anuncio.categoria.nome}}<br/>
+          <span class="bold" ion-text color="secondary" 
+              *ngIf="item != null && item.statusSolicitacao != null">
+              {{item.statusSolicitacao}}
+          </span><br/>
+          <span *ngIf="item != null && 
+                item.statusSolicitacao != null &&
+                 item.statusSolicitacao === 'Servico Agendado'">
+             Agendado para dia {{ item.dataAgendamento | date: 'dd/MM/yyyy' }}
+          </span>
         </div>
         
         <div>
@@ -46,9 +62,9 @@
          </div>
       </div>
 
-      <div item-right>
+      <!-- <div item-right>
         <span class="bold" ion-text color="secondary" *ngIf="item != null && item.statusSolicitacao != null">{{item.statusSolicitacao}}</span>
-      </div>
+      </div> -->
     </ion-item>
 
     <ion-grid>
@@ -57,7 +73,15 @@
             <button ion-button block class="btn-add-cart" (click)="showOptions(item)">Fazer Perguntas</button>
           </ion-col> -->
           <ion-col>
-            <button ion-button color="primary" block (click)="showOptions(item)">Comfirmar solicitação</button>
+            <button *ngIf="item != null && 
+            item.statusSolicitacao != null &&
+             item.statusSolicitacao === 'Aguardando confirmação'" 
+             ion-button color="primary" block
+             (click)="showOptions(item)">Comfirmar solicitação</button>
+
+            <button ion-button color="primary" block *ngIf="item != null && 
+            item.statusSolicitacao != null && item.statusSolicitacao === 'Servico Agendado'"
+            (click)="showOptions(item)">Confirmar Serviço</button>
           </ion-col>
         </ion-row>
       </ion-grid>
@@ -65,8 +89,18 @@
 
   <!--Description-->
   <div class="card light-bg" margin-top>
-    <div class="border-bottom" padding>Descrição anúncio</div>
-    <div padding>{{ item.descricao }}</div>
+    <div class="border-bottom" padding>Detalhes do Solicitante</div>
+    <div padding>
+      Nome: {{ item.cliente.nome }}<br/>
+      E-mail: {{ item.cliente.email }}<br/>
+      Telefone: {{ item.cliente.telefone }}<br/>
+      CEP: {{ item.cliente.cep }}<br/>
+      Estado: {{ item.cliente.estado.nome }}<br/>
+      Cidade: {{ item.cliente.cidade.nome }}<br/>
+      Bairro: {{ item.cliente.bairro.nome }}<br/>
+      Endereco: {{ item.cliente.endereco }}<br/>
+      Complemento: {{ item.cliente.complemento }}<br/>
+    </div>    
   </div>
 
  

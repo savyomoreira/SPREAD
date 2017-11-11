@@ -11,6 +11,7 @@ public class SolicitacaoServicoDTO extends HashMap<String, Object> {
         this.put("id", anuncio.getId());
         this.put("dataAgendamento", anuncio.getDataAgendamento());
         this.put("anuncio", new AnuncioDTO(anuncio.getAnuncio()));
+        this.put("descricao", anuncio.getDescricao());
         this.put("cliente", new UsuarioDTO(anuncio.getCliente()));
         if(anuncio.getStatusSolicitacao() != null){
           this.put("statusSolicitacao", anuncio.getStatusSolicitacao().getDecicaoStatus());

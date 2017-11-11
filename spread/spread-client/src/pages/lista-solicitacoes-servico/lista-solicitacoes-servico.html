@@ -12,9 +12,9 @@
     </button>
     <ion-title>Serviços solicitador</ion-title>
     <ion-buttons end>
-      <button ion-button (click)="goToCart()">
+      <!-- <button ion-button (click)="goToCart()">
         <ion-icon name="cart"></ion-icon>
-      </button>
+      </button> -->
     </ion-buttons>
   </ion-navbar>
 
@@ -55,16 +55,16 @@
           <!-- <span ion-text color="gray" class="pull-left" *ngIf="item.shipping == 0">Free shipping</span> -->
           <!-- <span ion-text color="gray" class="pull-left"> {{ item.categoria.nome}}</span> -->
            
-          <span ion-text color="gray" class="pull-right">
-              {{ item.anuncio.categoria.nome}}
+          <span ion-text color="secondary"  class="pull-right">
+              {{ item.statusSolicitacao}}
           </span>
           <div class="clear"></div>
         </div>
         <div class="bottom-info text-sm">
             <!-- <span ion-text color="gray" class="pull-left" *ngIf="item.shipping == 0">Free shipping</span> -->
             <!-- <span ion-text color="gray" class="pull-left"> {{ item.categoria.nome}}</span> -->
-            <span ion-text color="gray" class="pull-right">
-               Data da solicitação: {{ item.anuncio.dataAnuncio | date }}
+            <span ion-text color="gray" *ngIf="item.statusSolicitacao !== 'Aguardando confirmação'" class="pull-right">
+               Agendado para {{ item.dataAgendamento | date: 'dd/MM/yyyy' }}
             </span>      
             
             <div class="clear"></div>

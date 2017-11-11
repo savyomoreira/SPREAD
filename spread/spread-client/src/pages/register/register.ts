@@ -1,8 +1,10 @@
 import {Component} from '@angular/core';
-import {NavController} from 'ionic-angular';
+import {NavController,ToastController} from 'ionic-angular';
 import {LoginPage} from '../login/login';
 import {HomePage} from '../home/home';
 
+import {UserService} from '../../services/user-service';
+import {BairroService} from '../../services/bairro-service';
 
 /*
  Generated class for the LoginPage page.
@@ -16,7 +18,25 @@ import {HomePage} from '../home/home';
 })
 export class RegisterPage {
 
-  constructor(public nav: NavController) {
+  estados: Array<any>;
+
+  user = {email: '', 
+          name: '', 
+          senha: '', 
+          telefone: '',
+          cep: '',
+          endereco:'',
+          complemento:'',
+          bairro: null
+        };
+
+  constructor(public nav: NavController,
+    public toastCtrl: ToastController,
+    private bairroService: BairroService,
+    private userService: UserService) {
+      this.bairroService.findAll().subscribe(data => {
+        this.estados = data;
+      });
   }
 
   // go to login page
@@ -26,6 +46,14 @@ export class RegisterPage {
 
   // go to home page
   register() {
-    this.nav.setRoot(HomePage);
+    this.userService.save(this.user).then(data =>{
+      let toast = this.toastCtrl.create({
+        message: 'Usuario salvo com sucesso!',
+        duration: 5000,
+        position: 'middle'
+      });
+      this.nav.setRoot(HomePage);
+    });
+   
   }
 }

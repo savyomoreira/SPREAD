@@ -47,7 +47,7 @@ export class LoginPage {
     }).catch(data => {
 
       let toast = this.toastCtrl.create({
-        message: 'Anuncio salvo com sucesso!',
+        message: 'email ou senha inválidos',
         duration: 5000,
         position: 'middle'
       });

@@ -1,12 +1,17 @@
 import {Injectable} from "@angular/core";
 import {USERS} from "./mock-users";
 
+import { Http } from '@angular/http';
+
+import {GenericService} from '../services/generic.service';
+
 @Injectable()
-export class UserService {
+export class UserService extends GenericService {
   private users: any;
 
-  constructor() {
-    this.users = USERS;
+
+  constructor(public http: Http) {
+    super('usuario/', http);
   }
 
   getAll() {

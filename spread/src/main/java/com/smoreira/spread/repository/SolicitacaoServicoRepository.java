@@ -16,5 +16,10 @@ public interface SolicitacaoServicoRepository extends JpaRepository<SolicitacoeS
             + " where anunciante.id = :idAnunciante ")
     List<SolicitacoeServico> getByIdAnunciante(@Param("idAnunciante") Long idAnunciante);
 
+    @Query("select s from SolicitacoeServico s "
+            + " inner join fetch s.anuncio as anuncio "
+            + " inner join fetch anuncio.usuario as anunciante "
+            + " where s.cliente.id = :idCliente ")
+    List<SolicitacoeServico> getByIdCliente(@Param("idCliente") Long idAnunciante);
 
 }

@@ -17,6 +17,7 @@ import {WishListPage} from '../pages/wish-list/wish-list';
 import {MyOrderPage} from '../pages/my-order/my-order';
 import {CadastroAnuncioPage} from '../pages/cadastro-anuncio/cadastro-anuncio';
 import {ListSolicitacoesServicoPage} from '../pages/lista-solicitacoes-servico/lista-solicitacoes-servico';
+import {MinhasSolicitacoesServicoPage} from '../pages/minhas-solicitacoes-servico/minhas-solicitacoes-servico';
 
 // end import pages
 
@@ -49,17 +50,18 @@ export class MyApp {
       component: CadastroAnuncioPage
     },
     {
-      title: 'solicitacỗes de servico',
+      title: 'Servicos Solicitados',
       icon: 'ios-list-box-outline',
       count: 0,
       component: ListSolicitacoesServicoPage
     },
-    // {
-    //   title: 'Lista_categoria',
-    //   icon: 'ios-list-box-outline',
-    //   count: 0,    
-    //   component: ListaCategotiaPage
-    // },
+    {
+      title: 'Minhas Solicitações',
+      icon: 'ios-timer-outline',
+      count: 0,    
+      component: MinhasSolicitacoesServicoPage
+
+    },
 
     // {
     //   title: 'Categories',

@@ -11,9 +11,11 @@ public class UsuarioDTO extends HashMap<String, Object> {
         this.put("nome", usuario.getName());
         this.put("cep", usuario.getCep());
         this.put("email", usuario.getEmail());
-        this.put("cidade", usuario.getCidade());
+        this.put("endereco", usuario.getEndereco());
+        this.put("cidade", usuario.getBairro().getCidade());
         this.put("bairro", usuario.getBairro());
-        this.put("estado", usuario.getEstado());
+        this.put("estado", usuario.getBairro().getCidade().getEstado());
         this.put("telefone", usuario.getTelefone());
+        this.put("complemento", usuario.getComplemento());
     }
 }

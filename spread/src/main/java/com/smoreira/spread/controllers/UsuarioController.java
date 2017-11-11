@@ -1,6 +1,12 @@
 package com.smoreira.spread.controllers;
 
+import com.smoreira.spread.models.entity.Anuncio;
 import com.smoreira.spread.models.entity.Usuario;
+import com.smoreira.spread.service.UsuarioService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 //import com.smoreira.spread.models.entity.Usuario;
@@ -13,13 +19,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping("/usuario")
 public class UsuarioController {
 
-    @RequestMapping(method = RequestMethod.GET)
-    public List<Usuario> getAll(){
-        List<Usuario> usuarioList = new ArrayList<>();
-        usuarioList.add(new Usuario("teste", "teste"));
-        usuarioList.add(new Usuario("teste1", "teste"));
-        usuarioList.add(new Usuario("teste2", "teste"));
-        usuarioList.add(new Usuario("teste3", "teste"));
-        return usuarioList;
+    @Autowired
+    private UsuarioService usuarioService;
+
+    @RequestMapping(method = RequestMethod.POST)
+    public ResponseEntity<?> save(@RequestBody Usuario usuario){
+        usuarioService.save(usuario);
+        return new ResponseEntity(HttpStatus.OK);
     }
 }

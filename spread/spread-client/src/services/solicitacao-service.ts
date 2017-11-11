@@ -18,8 +18,16 @@ export class SolicitacaoService extends GenericService {
     return this.getMethod('solicitacaoService/' + idPrestador);
   }
 
+  findByIdCliente(idCliente){
+    return this.getMethod('solicitacaoService/' + 'byClienteId/' + idCliente);
+  }  
+
   findByID(value){
     return this.getMethod('solicitacaoService/one/' + value);
  }
+
+ confirmacaoDeServico(idSolicitacao, dataAgendada){
+  return this.putMethod('solicitacaoService/' + idSolicitacao, dataAgendada);
+}
  
 }

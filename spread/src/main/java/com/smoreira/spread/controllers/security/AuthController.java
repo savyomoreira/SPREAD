@@ -23,7 +23,7 @@ public class AuthController {
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<Usuario> login(@RequestBody Credentials credentials){
         Usuario usuario = authService.Login(credentials);
-        if(usuario != null){
+        if(usuario != null && usuario.getSenha().equals(credentials.getSenha())){
             return new ResponseEntity(usuario, HttpStatus.OK);
         }else{
             return new ResponseEntity(HttpStatus.FORBIDDEN);

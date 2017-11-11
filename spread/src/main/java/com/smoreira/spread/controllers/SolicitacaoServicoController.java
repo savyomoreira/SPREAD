@@ -23,6 +23,11 @@ public class SolicitacaoServicoController {
         return new ResponseEntity(solicitacaoService.getByIdAnunciante(id), HttpStatus.OK);
     }
 
+    @RequestMapping(value = "byClienteId/{id}" ,method = RequestMethod.GET)
+    public ResponseEntity<?> getByIdCliente(@PathVariable Long id){
+        return new ResponseEntity(solicitacaoService.getByIdCliente(id), HttpStatus.OK);
+    }
+
     @RequestMapping(value = "one/{id}" ,method = RequestMethod.GET)
     public ResponseEntity<?> getone(@PathVariable Long id){
         return new ResponseEntity(solicitacaoService.findOne(id), HttpStatus.OK);
@@ -30,9 +35,17 @@ public class SolicitacaoServicoController {
 
     @PostMapping()
     public ResponseEntity<?> save(@RequestBody SolicitacoeServico solicitacoeServico){
-        solicitacoeServico.setStatusSolicitacao(StatusSolicitacaoEnum.SERVICO_AGENDADO);
+        solicitacoeServico.setStatusSolicitacao(StatusSolicitacaoEnum.AGUARDANDO_CONFIRMACAO);
         solicitacoeServico.setDataAgendamento(new Date());
         solicitacaoService.save(solicitacoeServico);
+        return new ResponseEntity(HttpStatus.OK);
+    }
+
+
+    @PutMapping("/{idSolicitacao}")
+    public ResponseEntity<?> confirmarSolicitacao(@PathVariable Long idSolicitacao,
+                                                  @RequestBody Date dataAgendamendamento){
+        solicitacaoService.confirmarSolicitacao(idSolicitacao, dataAgendamendamento);
         return new ResponseEntity(HttpStatus.OK);
     }
 
