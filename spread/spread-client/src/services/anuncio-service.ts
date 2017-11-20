@@ -19,6 +19,10 @@ export class AnuncioService extends GenericService {
     return this.getMethod('anuncio/byCategoria/' + idCategoria);
   }
 
+  findByIdUser(idUser){
+    return this.getMethod('anuncio/byUserId/' + idUser);
+  }  
+
   addAnexo(file: File, filename: String, format: String) : Observable<any> {
     const formData: any = new FormData();
     formData.append('file', file, file.name);

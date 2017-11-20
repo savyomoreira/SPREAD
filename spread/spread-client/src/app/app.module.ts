@@ -58,6 +58,7 @@ import {TabAttributePage} from '../pages/tab-attribute/tab-attribute';
 import {TabFilterPage} from '../pages/tab-filter/tab-filter';
 import {WelcomePage} from '../pages/welcome/welcome';
 import {WishListPage} from '../pages/wish-list/wish-list';
+import {MeusAnunciosPage} from '../pages/meus-anuncios/meus-anuncios';
 import {MinhasSolicitacoesServicoPage} from '../pages/minhas-solicitacoes-servico/minhas-solicitacoes-servico';
 
 import {DetalheSolicitacaoPage} from '../pages/detalhe-solicitacao/detalhe-solicitacao';
@@ -77,6 +78,7 @@ import {ListAnuncioPage} from '../pages/lista-anuncio/lista-anuncio';
     CurrencyConverterPage,
     ModalConfirmacaoSolicitacaoPage,
     ForgotPasswordPage,
+    MeusAnunciosPage,
     ListAnuncioPage,
     ListaCategotiaPage,
     CadastroAnuncioPage,
@@ -111,6 +113,7 @@ import {ListAnuncioPage} from '../pages/lista-anuncio/lista-anuncio';
     CartPage,
     CategoriesPage,
     ModalConfirmacaoSolicitacaoPage,
+    MeusAnunciosPage,
     MinhasSolicitacoesServicoPage,
     DetalheSolicitacaoPage,
     ListSolicitacoesServicoPage,

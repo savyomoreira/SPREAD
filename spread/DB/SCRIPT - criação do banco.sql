@@ -153,5 +153,12 @@ ALTER TABLE base_tcc.USUARIO
 ADD FOREIGN KEY (id_bairro) 
 REFERENCES base_tcc.BAIRRO(id_bairro); 
 
+ALTER TABLE base_tcc.USUARIO
+drop column sexo;
+
+ALTER TABLE `base_tcc`.`USUARIO` 
+CHANGE COLUMN `senha` `senha` VARCHAR(50) NOT NULL ;
+
+
 
 

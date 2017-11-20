@@ -28,6 +28,9 @@ public class AnuncioService {
     public Anuncio getOne(Long id){
         return anuncioRepository.getOne(id);
     }
+    public List<Anuncio> getByUserId(Long userId){
+        return anuncioRepository.findByUserId(userId);
+    }
 
     public List<Anuncio> getByCategoria(Long id){
         return anuncioRepository.findByCategoriaId(id);

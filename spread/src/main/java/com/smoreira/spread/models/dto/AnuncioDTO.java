@@ -3,6 +3,7 @@ package com.smoreira.spread.models.dto;
 import com.smoreira.spread.models.entity.Anuncio;
 
 import java.util.HashMap;
+import java.util.List;
 
 public class AnuncioDTO extends HashMap<String, Object> {
     public AnuncioDTO(Anuncio anuncio) {
@@ -13,4 +14,5 @@ public class AnuncioDTO extends HashMap<String, Object> {
         this.put("usuario", anuncio.getUsuario());
         this.put("tituloAnuncio", anuncio.getTituloAnuncio());
     }
+
 }

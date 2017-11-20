@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 import {NavController, ViewController} from 'ionic-angular';
 
 import {BairroService} from '../../services/bairro-service';
@@ -16,24 +16,32 @@ import {BairroService} from '../../services/bairro-service';
 export class TabFilterPage {
   // set filter value
   public filter = {
-    shipTo: ''
+    bairro : null,
+    nome:''
   }
 
-  estados: any;
+  bairros: any;
+
+  @Output()
+  event = new EventEmitter();
 
   constructor(public nav: NavController,
-    private estadoService: BairroService,
+    private bairroService: BairroService,
     public viewCtrl: ViewController) {
-      estadoService.findAll().subscribe(data=>{
-          this.estados = data;
-          console.log(data)
-        });
+      this.bairroService.findAll().subscribe(data => {
+        this.bairros = data;
+      });
 
+  }
+
+  applyFilter(){
+    this.closeModal(this.filter);
   }
 
   // close modal
-  closeModal() {
-    // this.nav.pop();
-    // this.viewCtrl.dismiss(true);
+  closeModal(filter) {
+    //this.nav.pop();
+    this.event.emit({filter})
+    this.viewCtrl.dismiss(true);
   }
 }

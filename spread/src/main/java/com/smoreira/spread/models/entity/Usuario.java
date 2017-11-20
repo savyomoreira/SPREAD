@@ -36,13 +36,6 @@ public class Usuario {
 	@Column(name = "endereco")
 	private String endereco;
 
-//	@Column(name = "cidade")
-//	private String cidade;
-//
-//	@Column(name = "ESTADO")
-//	private String estado;
-//	// private String foto;
-
 	@Column(name = "complemento")
 	private String complemento;
 	

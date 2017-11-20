@@ -18,6 +18,7 @@ import {MyOrderPage} from '../pages/my-order/my-order';
 import {CadastroAnuncioPage} from '../pages/cadastro-anuncio/cadastro-anuncio';
 import {ListSolicitacoesServicoPage} from '../pages/lista-solicitacoes-servico/lista-solicitacoes-servico';
 import {MinhasSolicitacoesServicoPage} from '../pages/minhas-solicitacoes-servico/minhas-solicitacoes-servico';
+import {MeusAnunciosPage} from '../pages/meus-anuncios/meus-anuncios';
 
 // end import pages
 
@@ -42,10 +43,15 @@ export class MyApp {
       count: 0,
       component: HomePage
     },
-
+    {
+      title: 'Meus anuncios',
+      icon: 'md-list',
+      count: 0,
+      component: MeusAnunciosPage
+    },
     {
       title: 'Cadastro Anuncio',
-      icon: 'ios-list-box-outline',
+      icon: 'ios-create-outline',
       count: 0,
       component: CadastroAnuncioPage
     },
@@ -57,7 +63,7 @@ export class MyApp {
     },
     {
       title: 'Minhas Solicitações',
-      icon: 'ios-timer-outline',
+      icon: 'ios-list-outline',
       count: 0,    
       component: MinhasSolicitacoesServicoPage
 

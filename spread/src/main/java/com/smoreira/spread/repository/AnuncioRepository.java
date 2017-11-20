@@ -11,4 +11,10 @@ public interface AnuncioRepository  extends JpaRepository<Anuncio, Long>{
 
     @Query("select anuncio from Anuncio anuncio where anuncio.categoria.id = :idCategoria")
     List<Anuncio> findByCategoriaId(@Param("idCategoria") Long idCategoria);
+
+    @Query(" select anuncio from Anuncio anuncio " +
+            " join fetch anuncio.usuario usuario "+
+            " where usuario.id = :idUser")
+    List<Anuncio> findByUserId(@Param("idUser") Long idUser);
+
 }
