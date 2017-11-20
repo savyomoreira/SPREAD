@@ -29,9 +29,9 @@ export class LoginPage {
      public loginService: LoginService) {
 
     this.currentUser = JSON.parse(sessionStorage.getItem('user'));
-    if(this.currentUser != null){
-      this.nav.setRoot(HomePage);
-    }
+    // if(this.currentUser != null){
+    //   this.nav.setRoot(HomePage);
+    // }
   }
 
   // go to register page

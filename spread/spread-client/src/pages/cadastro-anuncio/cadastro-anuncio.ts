@@ -79,7 +79,8 @@ getFiles(files: any) {
           duration: 3000,
           position: 'middle'
         });
-
+        
+        toast.present();
         console.log(data);
         this.nav.setRoot(ItemPage, {id: data})
       // this.nav.push(HomePage, {id: data}, {updateUrl: true})

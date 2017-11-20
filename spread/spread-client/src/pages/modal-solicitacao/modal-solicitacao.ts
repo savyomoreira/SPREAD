@@ -57,7 +57,7 @@ export class ModalSolicitacaoPage {
     console.log(this.item)
     this.solicitacaoService.save({descricao: this.descricao, cliente: this.currentUser, anuncio: this.item});
     let toast = this.toastCtrl.create({
-      message: 'Solicitação enciada! breve o proficional entrará em contato com você.',
+      message: 'Solicitação enviada! Breve o profissional entrará em contato com você.',
       duration: 5000,
       position: 'middle'
     });

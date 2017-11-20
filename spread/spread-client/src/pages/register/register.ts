@@ -46,14 +46,15 @@ export class RegisterPage {
 
   // go to home page
   register() {
-    this.userService.save(this.user).then(data =>{
+    this.userService.save(this.user);
       let toast = this.toastCtrl.create({
         message: 'Usuario salvo com sucesso!',
         duration: 5000,
         position: 'middle'
       });
-      this.nav.setRoot(HomePage);
-    });
-   
+     
+    this.nav.push(LoginPage);
+    toast.present();
+    
   }
 }
